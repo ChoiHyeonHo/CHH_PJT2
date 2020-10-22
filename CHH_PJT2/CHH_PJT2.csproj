@@ -44,6 +44,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +61,18 @@
     </Compile>
     <Compile Include="AttendanceForm.Designer.cs">
       <DependentUpon>AttendanceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BoardFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BoardFrom.Designer.cs">
+      <DependentUpon>BoardFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePwdForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePwdForm.Designer.cs">
+      <DependentUpon>ChangePwdForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ClassForm.cs">
       <SubType>Form</SubType>
@@ -97,10 +110,28 @@
     <Compile Include="MemberFrom.Designer.cs">
       <DependentUpon>MemberFrom.cs</DependentUpon>
     </Compile>
+    <Compile Include="MembershipFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MembershipFrom.Designer.cs">
+      <DependentUpon>MembershipFrom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchIDForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchIDForm.Designer.cs">
+      <DependentUpon>SearchIDForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AttendanceForm.resx">
       <DependentUpon>AttendanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoardFrom.resx">
+      <DependentUpon>BoardFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePwdForm.resx">
+      <DependentUpon>ChangePwdForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClassForm.resx">
       <DependentUpon>ClassForm.cs</DependentUpon>
@@ -120,6 +151,9 @@
     <EmbeddedResource Include="MemberFrom.resx">
       <DependentUpon>MemberFrom.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MembershipFrom.resx">
+      <DependentUpon>MembershipFrom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -129,6 +163,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SearchIDForm.resx">
+      <DependentUpon>SearchIDForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

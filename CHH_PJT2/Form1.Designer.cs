@@ -37,6 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // metroLabel2
@@ -45,11 +46,11 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Small;
             this.metroLabel2.ForeColor = System.Drawing.Color.DimGray;
-            this.metroLabel2.Location = new System.Drawing.Point(209, 353);
+            this.metroLabel2.Location = new System.Drawing.Point(156, 351);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(72, 15);
+            this.metroLabel2.Size = new System.Drawing.Size(45, 15);
             this.metroLabel2.TabIndex = 14;
-            this.metroLabel2.Text = "ID · PW 찾기";
+            this.metroLabel2.Text = "ID 찾기";
             this.metroLabel2.UseCustomForeColor = true;
             // 
             // metroLabel1
@@ -58,7 +59,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Small;
             this.metroLabel1.ForeColor = System.Drawing.Color.DimGray;
-            this.metroLabel1.Location = new System.Drawing.Point(79, 353);
+            this.metroLabel1.Location = new System.Drawing.Point(68, 351);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(55, 15);
             this.metroLabel1.TabIndex = 13;
@@ -203,11 +204,25 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "cademy";
             // 
+            // metroLabel3
+            // 
+            this.metroLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel3.ForeColor = System.Drawing.Color.DimGray;
+            this.metroLabel3.Location = new System.Drawing.Point(234, 351);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(56, 15);
+            this.metroLabel3.TabIndex = 15;
+            this.metroLabel3.Text = "Pwd 변경";
+            this.metroLabel3.UseCustomForeColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(358, 469);
+            this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroButton1);
@@ -235,6 +250,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
     }
 }
 
