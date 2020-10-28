@@ -1,6 +1,6 @@
 ﻿namespace CHH_PJT2
 {
-    partial class MembershipFrom
+    partial class frmMembership
     {
         /// <summary>
         /// Required designer variable.

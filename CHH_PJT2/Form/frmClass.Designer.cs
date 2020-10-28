@@ -1,6 +1,6 @@
 ﻿namespace CHH_PJT2
 {
-    partial class ClassForm
+    partial class frmClass
     {
         /// <summary>
         /// Required designer variable.

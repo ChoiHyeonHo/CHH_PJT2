@@ -1,6 +1,6 @@
 ﻿namespace CHH_PJT2
 {
-    partial class MemberFrom
+    partial class frmMember
     {
         /// <summary>
         /// Required designer variable.

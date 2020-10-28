@@ -1,6 +1,6 @@
 ﻿namespace CHH_PJT2
 {
-    partial class CounselingForm
+    partial class frmCounseling
     {
         /// <summary>
         /// Required designer variable.

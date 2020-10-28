@@ -1,6 +1,6 @@
 ﻿namespace CHH_PJT2
 {
-    partial class AttendanceForm
+    partial class frnAttendance
     {
         /// <summary>
         /// Required designer variable.

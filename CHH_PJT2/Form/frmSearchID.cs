@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CHH_PJT2
 {
-    public partial class ClassForm : Form
+    public partial class frmSearchID : Form
     {
-        public ClassForm()
+        public frmSearchID()
         {
             InitializeComponent();
         }

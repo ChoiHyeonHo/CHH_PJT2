@@ -1,6 +1,6 @@
 ﻿namespace CHH_PJT2
 {
-    partial class SearchIDForm
+    partial class frmSearchID
     {
         /// <summary>
         /// Required designer variable.

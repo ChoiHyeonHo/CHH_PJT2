@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CHH_PJT2
 {
-    public partial class BoardFrom : Form
+    public partial class frmClass : Form
     {
-        public BoardFrom()
+        public frmClass()
         {
             InitializeComponent();
         }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CHH_PJT2
 {
-    public partial class CounselingForm : Form
+    public partial class frmHome : Form
     {
-        public CounselingForm()
+        public frmHome()
         {
             InitializeComponent();
         }

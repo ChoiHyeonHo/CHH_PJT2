@@ -1,6 +1,6 @@
 ﻿namespace CHH_PJT2
 {
-    partial class HomeFrom
+    partial class frmHome
     {
         /// <summary>
         /// Required designer variable.

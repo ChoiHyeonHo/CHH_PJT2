@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CHH_PJT2
 {
-    public partial class AttendanceForm : Form
+    public partial class frmMember : Form
     {
-        public AttendanceForm()
+        public frmMember()
         {
             InitializeComponent();
         }

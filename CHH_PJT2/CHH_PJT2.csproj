@@ -42,7 +42,9 @@
     <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
@@ -56,103 +58,105 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AttendanceForm.cs">
+    <Compile Include="Form\LogInDB.cs" />
+    <Compile Include="Form\frnAttendance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AttendanceForm.Designer.cs">
-      <DependentUpon>AttendanceForm.cs</DependentUpon>
+    <Compile Include="Form\frnAttendance.Designer.cs">
+      <DependentUpon>frnAttendance.cs</DependentUpon>
     </Compile>
-    <Compile Include="BoardFrom.cs">
+    <Compile Include="Form\frmBoard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BoardFrom.Designer.cs">
-      <DependentUpon>BoardFrom.cs</DependentUpon>
+    <Compile Include="Form\frmBoard.Designer.cs">
+      <DependentUpon>frmBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChangePwdForm.cs">
+    <Compile Include="Form\frmChangePwd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChangePwdForm.Designer.cs">
-      <DependentUpon>ChangePwdForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ClassForm.cs">
+    <Compile Include="Form\.Designer.cs">
+      <DependentUpon>frmChangePwd.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClassForm.Designer.cs">
-      <DependentUpon>ClassForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CounselingForm.cs">
+    <Compile Include="Form\frmClass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CounselingForm.Designer.cs">
-      <DependentUpon>CounselingForm.cs</DependentUpon>
+    <Compile Include="Form\frmClass.Designer.cs">
+      <DependentUpon>frmClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Form\frmCounseling.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Form\frmCounseling.Designer.cs">
+      <DependentUpon>frmCounseling.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomeFrom.cs">
+    <Compile Include="Form\frmLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HomeFrom.Designer.cs">
-      <DependentUpon>HomeFrom.cs</DependentUpon>
+    <Compile Include="Form\frmLogIn.Designer.cs">
+      <DependentUpon>frmLogIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Form\frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="Form\frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="MemberFrom.cs">
+    <Compile Include="Form\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MemberFrom.Designer.cs">
-      <DependentUpon>MemberFrom.cs</DependentUpon>
+    <Compile Include="Form\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="MembershipFrom.cs">
+    <Compile Include="Form\frmMember.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MembershipFrom.Designer.cs">
-      <DependentUpon>MembershipFrom.cs</DependentUpon>
+    <Compile Include="Form\frmMember.Designer.cs">
+      <DependentUpon>frmMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmMembership.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmMembership.Designer.cs">
+      <DependentUpon>frmMembership.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SearchIDForm.cs">
+    <Compile Include="Form\frmSearchID.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SearchIDForm.Designer.cs">
-      <DependentUpon>SearchIDForm.cs</DependentUpon>
+    <Compile Include="Form\frmSearchID.Designer.cs">
+      <DependentUpon>frmSearchID.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AttendanceForm.resx">
-      <DependentUpon>AttendanceForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form\frnAttendance.resx">
+      <DependentUpon>frnAttendance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BoardFrom.resx">
-      <DependentUpon>BoardFrom.cs</DependentUpon>
+    <EmbeddedResource Include="Form\frmBoard.resx">
+      <DependentUpon>frmBoard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChangePwdForm.resx">
-      <DependentUpon>ChangePwdForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form\frmChangePwd.resx">
+      <DependentUpon>frmChangePwd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClassForm.resx">
-      <DependentUpon>ClassForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form\frmClass.resx">
+      <DependentUpon>frmClass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CounselingForm.resx">
-      <DependentUpon>CounselingForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form\frmCounseling.resx">
+      <DependentUpon>frmCounseling.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Form\frmLogIn.resx">
+      <DependentUpon>frmLogIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomeFrom.resx">
-      <DependentUpon>HomeFrom.cs</DependentUpon>
+    <EmbeddedResource Include="Form\frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MemberFrom.resx">
-      <DependentUpon>MemberFrom.cs</DependentUpon>
+    <EmbeddedResource Include="Form\frmMember.resx">
+      <DependentUpon>frmMember.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MembershipFrom.resx">
-      <DependentUpon>MembershipFrom.cs</DependentUpon>
+    <EmbeddedResource Include="Form\frmMembership.resx">
+      <DependentUpon>frmMembership.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -163,8 +167,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SearchIDForm.resx">
-      <DependentUpon>SearchIDForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form\frmSearchID.resx">
+      <DependentUpon>frmSearchID.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -179,6 +183,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DB\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

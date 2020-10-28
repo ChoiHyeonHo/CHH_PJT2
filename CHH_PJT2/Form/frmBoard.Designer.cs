@@ -1,6 +1,6 @@
 ﻿namespace CHH_PJT2
 {
-    partial class BoardFrom
+    partial class frmBoard
     {
         /// <summary>
         /// Required designer variable.
