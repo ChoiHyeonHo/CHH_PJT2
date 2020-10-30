@@ -28,19 +28,34 @@ namespace CHH_PJT2
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            LogInDB.StaffInfo info = new LogInDB.StaffInfo();
+            if (txtID.Text.Trim().Length < 1 || txtPwd.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("제대로 입력해 주세요");
+            }
             LogInDB db = new LogInDB();
-
-            bool result = db.LogInCheck(staffInfo);
+            LogIn logIn = db.LogIn(txtID.Text.Trim(), txtPwd.Text.Trim());
             db.Dispose();
 
-            if (result)
+            if (logIn == null)
             {
-                MessageBox.Show("로그인 성공");
+                MessageBox.Show("회원 정보가 없습니다. 다시 확인하여 주십시오.");
             }
             else
             {
-                MessageBox.Show("이거 아닌데");
+                if (logIn.ID == "admin")
+                {
+                    MessageBox.Show($"개발자 로그인");
+                    frmMain frm = new frmMain();
+                    frm.Show();
+                    frm.TopLevel = true;
+                }
+                else
+                {
+                    MessageBox.Show($"{logIn.Name}님 환영합니다");
+                    frmMain frm = new frmMain();
+                    frm.Show();
+                    frm.TopLevel = true;
+                }
             }
         }
     }
