@@ -45,18 +45,34 @@ namespace CHH_PJT2
                 if (logIn.ID == "admin")
                 {
                     MessageBox.Show($"개발자 로그인");
-                    frmMain frm = new frmMain();
+                    frmMain frm = new frmMain(logIn);
                     frm.Show();
-                    frm.TopLevel = true;
                 }
                 else
                 {
-                    MessageBox.Show($"{logIn.Name}님 환영합니다");
-                    frmMain frm = new frmMain();
+                    MessageBox.Show($"로그인 성공");
+                    frmMain frm = new frmMain(logIn);
                     frm.Show();
-                    frm.TopLevel = true;
                 }
             }
+        }
+
+        private void lblIDSearch_Click(object sender, EventArgs e) //ID찾기
+        {
+            frmSearchID frm = new frmSearchID();
+            frm.ShowDialog();
+        }
+
+        private void lblChangePwd_Click(object sender, EventArgs e) //비밀번호 변경
+        {
+            ChangePwdForm frm = new ChangePwdForm();
+            frm.ShowDialog();
+        }
+
+        private void lblJoin_Click(object sender, EventArgs e)
+        {
+            frmMembership frm = new frmMembership();
+            frm.ShowDialog();
         }
     }
 }

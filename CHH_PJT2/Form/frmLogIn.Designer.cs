@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.lblIDSearch = new MetroFramework.Controls.MetroLabel();
+            this.lblJoin = new MetroFramework.Controls.MetroLabel();
             this.btnLogIn = new MetroFramework.Controls.MetroButton();
             this.txtPwd = new MetroFramework.Controls.MetroTextBox();
             this.txtID = new MetroFramework.Controls.MetroTextBox();
@@ -37,34 +37,36 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.lblChangePwd = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
-            // metroLabel2
+            // lblIDSearch
             // 
-            this.metroLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel2.ForeColor = System.Drawing.Color.DimGray;
-            this.metroLabel2.Location = new System.Drawing.Point(156, 351);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(45, 15);
-            this.metroLabel2.TabIndex = 14;
-            this.metroLabel2.Text = "ID 찾기";
-            this.metroLabel2.UseCustomForeColor = true;
+            this.lblIDSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblIDSearch.AutoSize = true;
+            this.lblIDSearch.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.lblIDSearch.ForeColor = System.Drawing.Color.DimGray;
+            this.lblIDSearch.Location = new System.Drawing.Point(156, 351);
+            this.lblIDSearch.Name = "lblIDSearch";
+            this.lblIDSearch.Size = new System.Drawing.Size(45, 15);
+            this.lblIDSearch.TabIndex = 14;
+            this.lblIDSearch.Text = "ID 찾기";
+            this.lblIDSearch.UseCustomForeColor = true;
+            this.lblIDSearch.Click += new System.EventHandler(this.lblIDSearch_Click);
             // 
-            // metroLabel1
+            // lblJoin
             // 
-            this.metroLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel1.ForeColor = System.Drawing.Color.DimGray;
-            this.metroLabel1.Location = new System.Drawing.Point(68, 351);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(55, 15);
-            this.metroLabel1.TabIndex = 13;
-            this.metroLabel1.Text = "회원가입";
-            this.metroLabel1.UseCustomForeColor = true;
+            this.lblJoin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblJoin.AutoSize = true;
+            this.lblJoin.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.lblJoin.ForeColor = System.Drawing.Color.DimGray;
+            this.lblJoin.Location = new System.Drawing.Point(68, 351);
+            this.lblJoin.Name = "lblJoin";
+            this.lblJoin.Size = new System.Drawing.Size(55, 15);
+            this.lblJoin.TabIndex = 13;
+            this.lblJoin.Text = "회원가입";
+            this.lblJoin.UseCustomForeColor = true;
+            this.lblJoin.Click += new System.EventHandler(this.lblJoin_Click);
             // 
             // btnLogIn
             // 
@@ -204,27 +206,28 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "cademy";
             // 
-            // metroLabel3
+            // lblChangePwd
             // 
-            this.metroLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel3.ForeColor = System.Drawing.Color.DimGray;
-            this.metroLabel3.Location = new System.Drawing.Point(234, 351);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(56, 15);
-            this.metroLabel3.TabIndex = 15;
-            this.metroLabel3.Text = "Pwd 변경";
-            this.metroLabel3.UseCustomForeColor = true;
+            this.lblChangePwd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblChangePwd.AutoSize = true;
+            this.lblChangePwd.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.lblChangePwd.ForeColor = System.Drawing.Color.DimGray;
+            this.lblChangePwd.Location = new System.Drawing.Point(234, 351);
+            this.lblChangePwd.Name = "lblChangePwd";
+            this.lblChangePwd.Size = new System.Drawing.Size(56, 15);
+            this.lblChangePwd.TabIndex = 15;
+            this.lblChangePwd.Text = "Pwd 변경";
+            this.lblChangePwd.UseCustomForeColor = true;
+            this.lblChangePwd.Click += new System.EventHandler(this.lblChangePwd_Click);
             // 
             // frmLogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(358, 469);
-            this.Controls.Add(this.metroLabel3);
-            this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.lblChangePwd);
+            this.Controls.Add(this.lblIDSearch);
+            this.Controls.Add(this.lblJoin);
             this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.txtPwd);
             this.Controls.Add(this.txtID);
@@ -241,8 +244,8 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel lblIDSearch;
+        private MetroFramework.Controls.MetroLabel lblJoin;
         private MetroFramework.Controls.MetroButton btnLogIn;
         private MetroFramework.Controls.MetroTextBox txtPwd;
         private MetroFramework.Controls.MetroTextBox txtID;
@@ -250,7 +253,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel lblChangePwd;
     }
 }
 

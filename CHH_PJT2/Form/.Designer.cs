@@ -28,40 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnChange = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cbJob = new System.Windows.Forms.ComboBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtphNum = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtChangePwd = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnChange
             // 
-            this.button1.Location = new System.Drawing.Point(15, 246);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(403, 53);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "변경";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnChange.Location = new System.Drawing.Point(15, 246);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(403, 53);
+            this.btnChange.TabIndex = 17;
+            this.btnChange.Text = "변경";
+            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtID);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.cbJob);
+            this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtphNum);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(15, 12);
@@ -71,14 +72,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "본인 확인";
             // 
-            // textBox3
+            // txtID
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox3.Location = new System.Drawing.Point(103, 84);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(280, 25);
-            this.textBox3.TabIndex = 12;
+            this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtID.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtID.Location = new System.Drawing.Point(103, 84);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(280, 25);
+            this.txtID.TabIndex = 12;
             // 
             // label4
             // 
@@ -89,23 +90,23 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "ID:";
             // 
-            // comboBox1
+            // cbJob
             // 
-            this.comboBox1.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(103, 118);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(280, 23);
-            this.comboBox1.TabIndex = 9;
+            this.cbJob.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cbJob.FormattingEnabled = true;
+            this.cbJob.Location = new System.Drawing.Point(103, 118);
+            this.cbJob.Name = "cbJob";
+            this.cbJob.Size = new System.Drawing.Size(280, 23);
+            this.cbJob.TabIndex = 9;
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(103, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(280, 25);
-            this.textBox1.TabIndex = 5;
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtName.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtName.Location = new System.Drawing.Point(103, 20);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(280, 25);
+            this.txtName.TabIndex = 5;
             // 
             // label1
             // 
@@ -116,14 +117,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "이름: ";
             // 
-            // textBox2
+            // txtphNum
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox2.Location = new System.Drawing.Point(103, 51);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(280, 25);
-            this.textBox2.TabIndex = 6;
+            this.txtphNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtphNum.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtphNum.Location = new System.Drawing.Point(103, 51);
+            this.txtphNum.Name = "txtphNum";
+            this.txtphNum.Size = new System.Drawing.Size(280, 25);
+            this.txtphNum.TabIndex = 6;
             // 
             // label2
             // 
@@ -145,7 +146,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.txtChangePwd);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(15, 178);
             this.groupBox2.Name = "groupBox2";
@@ -154,14 +155,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pwd 변경";
             // 
-            // textBox5
+            // txtChangePwd
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox5.Location = new System.Drawing.Point(103, 20);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(280, 25);
-            this.textBox5.TabIndex = 5;
+            this.txtChangePwd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtChangePwd.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtChangePwd.Location = new System.Drawing.Point(103, 20);
+            this.txtChangePwd.Name = "txtChangePwd";
+            this.txtChangePwd.Size = new System.Drawing.Size(280, 25);
+            this.txtChangePwd.TabIndex = 5;
             // 
             // label6
             // 
@@ -179,7 +180,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(432, 312);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnChange);
             this.Controls.Add(this.groupBox1);
             this.Name = "ChangePwdForm";
             this.Text = "ChangePwdForm";
@@ -193,18 +194,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cbJob;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtphNum;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtChangePwd;
         private System.Windows.Forms.Label label6;
     }
 }
