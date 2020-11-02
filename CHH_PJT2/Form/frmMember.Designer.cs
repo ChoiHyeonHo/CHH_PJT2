@@ -35,35 +35,36 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNum = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPostalCode = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtSchool = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtGrade = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtBirth = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtlessonCode = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtAntecedent = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtPPNum = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtNs = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.dtpBirth = new System.Windows.Forms.DateTimePicker();
+            this.txtDetAddress = new System.Windows.Forms.TextBox();
+            this.txtPriAddress = new System.Windows.Forms.TextBox();
+            this.btnSearchAddress = new System.Windows.Forms.Button();
             this.dtpRegDate = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.rbtnGenderW = new System.Windows.Forms.RadioButton();
+            this.rbtnGenderM = new System.Windows.Forms.RadioButton();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnRenew = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.memberDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -78,7 +79,7 @@
             this.memberDataGridView.Name = "memberDataGridView";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔바른고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -96,7 +97,7 @@
             this.txtName.Location = new System.Drawing.Point(61, 18);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(89, 21);
-            this.txtName.TabIndex = 1;
+            this.txtName.TabIndex = 0;
             // 
             // label1
             // 
@@ -123,7 +124,7 @@
             this.txtNum.Location = new System.Drawing.Point(61, 55);
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(211, 21);
-            this.txtNum.TabIndex = 3;
+            this.txtNum.TabIndex = 2;
             // 
             // label3
             // 
@@ -135,14 +136,14 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "주소: ";
             // 
-            // textBox3
+            // txtPostalCode
             // 
-            this.textBox3.ForeColor = System.Drawing.Color.Gray;
-            this.textBox3.Location = new System.Drawing.Point(61, 163);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(213, 21);
-            this.textBox3.TabIndex = 5;
-            this.textBox3.Text = "000-000";
+            this.txtPostalCode.ForeColor = System.Drawing.Color.Gray;
+            this.txtPostalCode.Location = new System.Drawing.Point(61, 163);
+            this.txtPostalCode.Name = "txtPostalCode";
+            this.txtPostalCode.Size = new System.Drawing.Size(213, 21);
+            this.txtPostalCode.TabIndex = 7;
+            this.txtPostalCode.Text = "000-000";
             // 
             // label4
             // 
@@ -159,7 +160,7 @@
             this.txtSchool.Location = new System.Drawing.Point(61, 90);
             this.txtSchool.Name = "txtSchool";
             this.txtSchool.Size = new System.Drawing.Size(212, 21);
-            this.txtSchool.TabIndex = 7;
+            this.txtSchool.TabIndex = 3;
             // 
             // label5
             // 
@@ -176,7 +177,7 @@
             this.txtGrade.Location = new System.Drawing.Point(61, 127);
             this.txtGrade.Name = "txtGrade";
             this.txtGrade.Size = new System.Drawing.Size(89, 21);
-            this.txtGrade.TabIndex = 9;
+            this.txtGrade.TabIndex = 4;
             // 
             // label6
             // 
@@ -187,13 +188,6 @@
             this.label6.Size = new System.Drawing.Size(77, 21);
             this.label6.TabIndex = 12;
             this.label6.Text = "생년월일:";
-            // 
-            // txtBirth
-            // 
-            this.txtBirth.Location = new System.Drawing.Point(391, 18);
-            this.txtBirth.Name = "txtBirth";
-            this.txtBirth.Size = new System.Drawing.Size(167, 21);
-            this.txtBirth.TabIndex = 11;
             // 
             // label7
             // 
@@ -210,7 +204,7 @@
             this.txtlessonCode.Location = new System.Drawing.Point(391, 45);
             this.txtlessonCode.Name = "txtlessonCode";
             this.txtlessonCode.Size = new System.Drawing.Size(167, 21);
-            this.txtlessonCode.TabIndex = 13;
+            this.txtlessonCode.TabIndex = 11;
             // 
             // label8
             // 
@@ -227,7 +221,7 @@
             this.txtAntecedent.Location = new System.Drawing.Point(391, 103);
             this.txtAntecedent.Name = "txtAntecedent";
             this.txtAntecedent.Size = new System.Drawing.Size(167, 21);
-            this.txtAntecedent.TabIndex = 15;
+            this.txtAntecedent.TabIndex = 13;
             // 
             // label9
             // 
@@ -244,16 +238,16 @@
             this.txtPPNum.Location = new System.Drawing.Point(391, 130);
             this.txtPPNum.Name = "txtPPNum";
             this.txtPPNum.Size = new System.Drawing.Size(167, 21);
-            this.txtPPNum.TabIndex = 17;
+            this.txtPPNum.TabIndex = 14;
             // 
-            // textBox10
+            // txtNs
             // 
-            this.textBox10.Location = new System.Drawing.Point(583, 387);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox10.Size = new System.Drawing.Size(235, 243);
-            this.textBox10.TabIndex = 19;
+            this.txtNs.Location = new System.Drawing.Point(583, 414);
+            this.txtNs.Multiline = true;
+            this.txtNs.Name = "txtNs";
+            this.txtNs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtNs.Size = new System.Drawing.Size(235, 216);
+            this.txtNs.TabIndex = 19;
             // 
             // comboBox1
             // 
@@ -266,22 +260,23 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox13);
-            this.groupBox1.Controls.Add(this.textBox11);
-            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.dtpBirth);
+            this.groupBox1.Controls.Add(this.txtDetAddress);
+            this.groupBox1.Controls.Add(this.txtPriAddress);
+            this.groupBox1.Controls.Add(this.btnSearchAddress);
             this.groupBox1.Controls.Add(this.dtpRegDate);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtID);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.rbtnGenderW);
+            this.groupBox1.Controls.Add(this.rbtnGenderM);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.txtNum);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtPPNum);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtPostalCode);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtAntecedent);
@@ -292,7 +287,6 @@
             this.groupBox1.Controls.Add(this.txtGrade);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtBirth);
             this.groupBox1.Location = new System.Drawing.Point(12, 370);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(565, 260);
@@ -300,33 +294,41 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Infomation";
             // 
-            // textBox13
+            // dtpBirth
             // 
-            this.textBox13.ForeColor = System.Drawing.Color.Gray;
-            this.textBox13.Location = new System.Drawing.Point(61, 219);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(497, 21);
-            this.textBox13.TabIndex = 30;
-            this.textBox13.Text = "상세 주소";
+            this.dtpBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBirth.Location = new System.Drawing.Point(391, 18);
+            this.dtpBirth.Name = "dtpBirth";
+            this.dtpBirth.Size = new System.Drawing.Size(167, 21);
+            this.dtpBirth.TabIndex = 10;
             // 
-            // textBox11
+            // txtDetAddress
             // 
-            this.textBox11.ForeColor = System.Drawing.Color.Gray;
-            this.textBox11.Location = new System.Drawing.Point(61, 192);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(497, 21);
-            this.textBox11.TabIndex = 29;
-            this.textBox11.Text = "기본 주소";
+            this.txtDetAddress.ForeColor = System.Drawing.Color.Gray;
+            this.txtDetAddress.Location = new System.Drawing.Point(61, 219);
+            this.txtDetAddress.Name = "txtDetAddress";
+            this.txtDetAddress.Size = new System.Drawing.Size(497, 21);
+            this.txtDetAddress.TabIndex = 9;
+            this.txtDetAddress.Text = "상세 주소";
             // 
-            // button5
+            // txtPriAddress
             // 
-            this.button5.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.Location = new System.Drawing.Point(292, 163);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(267, 23);
-            this.button5.TabIndex = 28;
-            this.button5.Text = "주소 검색";
-            this.button5.UseVisualStyleBackColor = true;
+            this.txtPriAddress.ForeColor = System.Drawing.Color.Gray;
+            this.txtPriAddress.Location = new System.Drawing.Point(61, 192);
+            this.txtPriAddress.Name = "txtPriAddress";
+            this.txtPriAddress.Size = new System.Drawing.Size(497, 21);
+            this.txtPriAddress.TabIndex = 8;
+            this.txtPriAddress.Text = "기본 주소";
+            // 
+            // btnSearchAddress
+            // 
+            this.btnSearchAddress.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearchAddress.Location = new System.Drawing.Point(292, 163);
+            this.btnSearchAddress.Name = "btnSearchAddress";
+            this.btnSearchAddress.Size = new System.Drawing.Size(267, 23);
+            this.btnSearchAddress.TabIndex = 28;
+            this.btnSearchAddress.Text = "주소 검색";
+            this.btnSearchAddress.UseVisualStyleBackColor = true;
             // 
             // dtpRegDate
             // 
@@ -334,7 +336,7 @@
             this.dtpRegDate.Location = new System.Drawing.Point(391, 76);
             this.dtpRegDate.Name = "dtpRegDate";
             this.dtpRegDate.Size = new System.Drawing.Size(167, 21);
-            this.dtpRegDate.TabIndex = 27;
+            this.dtpRegDate.TabIndex = 12;
             // 
             // label11
             // 
@@ -351,7 +353,7 @@
             this.txtID.Location = new System.Drawing.Point(188, 18);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(85, 21);
-            this.txtID.TabIndex = 25;
+            this.txtID.TabIndex = 1;
             // 
             // label10
             // 
@@ -363,76 +365,90 @@
             this.label10.TabIndex = 22;
             this.label10.Text = "등록일: ";
             // 
-            // radioButton2
+            // rbtnGenderW
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radioButton2.Location = new System.Drawing.Point(221, 128);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(40, 19);
-            this.radioButton2.TabIndex = 20;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Tag = "여";
-            this.radioButton2.Text = "여";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbtnGenderW.AutoSize = true;
+            this.rbtnGenderW.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbtnGenderW.Location = new System.Drawing.Point(221, 128);
+            this.rbtnGenderW.Name = "rbtnGenderW";
+            this.rbtnGenderW.Size = new System.Drawing.Size(40, 19);
+            this.rbtnGenderW.TabIndex = 6;
+            this.rbtnGenderW.TabStop = true;
+            this.rbtnGenderW.Tag = "여";
+            this.rbtnGenderW.Text = "여";
+            this.rbtnGenderW.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbtnGenderM
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radioButton1.Location = new System.Drawing.Point(170, 128);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(40, 19);
-            this.radioButton1.TabIndex = 19;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Tag = "남";
-            this.radioButton1.Text = "남";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbtnGenderM.AutoSize = true;
+            this.rbtnGenderM.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rbtnGenderM.Location = new System.Drawing.Point(170, 128);
+            this.rbtnGenderM.Name = "rbtnGenderM";
+            this.rbtnGenderM.Size = new System.Drawing.Size(40, 19);
+            this.rbtnGenderM.TabIndex = 5;
+            this.rbtnGenderM.TabStop = true;
+            this.rbtnGenderM.Tag = "남";
+            this.rbtnGenderM.Text = "남";
+            this.rbtnGenderM.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnCreate
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(664, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "신규";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCreate.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCreate.Location = new System.Drawing.Point(664, 17);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(75, 23);
+            this.btnCreate.TabIndex = 23;
+            this.btnCreate.Text = "신규";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
-            // button2
+            // btnUpdate
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.Location = new System.Drawing.Point(583, 17);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "수정";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpdate.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnUpdate.Location = new System.Drawing.Point(583, 17);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 24;
+            this.btnUpdate.Text = "수정";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // button3
+            // btnRenew
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.Location = new System.Drawing.Point(200, 15);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(86, 23);
-            this.button3.TabIndex = 25;
-            this.button3.Text = "새로고침";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnRenew.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRenew.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnRenew.Location = new System.Drawing.Point(200, 15);
+            this.btnRenew.Name = "btnRenew";
+            this.btnRenew.Size = new System.Drawing.Size(86, 23);
+            this.btnRenew.TabIndex = 25;
+            this.btnRenew.Text = "새로고침";
+            this.btnRenew.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnDelete
             // 
-            this.button4.BackColor = System.Drawing.Color.LightCoral;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.Location = new System.Drawing.Point(745, 17);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 26;
-            this.button4.Text = "삭제";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.Color.Salmon;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDelete.Location = new System.Drawing.Point(745, 17);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 26;
+            this.btnDelete.Text = "삭제";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRemove.Location = new System.Drawing.Point(584, 370);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(234, 40);
+            this.btnRemove.TabIndex = 27;
+            this.btnRemove.Text = "항목 초기화";
+            this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // frmMember
             // 
@@ -440,13 +456,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(841, 642);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRemove);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnRenew);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.txtNs);
             this.Controls.Add(this.memberDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMember";
@@ -469,34 +486,35 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNum;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPostalCode;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSchool;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtGrade;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtBirth;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtlessonCode;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtAntecedent;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtPPNum;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtNs;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.RadioButton rbtnGenderW;
+        private System.Windows.Forms.RadioButton rbtnGenderM;
+        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnRenew;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.DateTimePicker dtpRegDate;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox txtDetAddress;
+        private System.Windows.Forms.TextBox txtPriAddress;
+        private System.Windows.Forms.Button btnSearchAddress;
+        private System.Windows.Forms.DateTimePicker dtpBirth;
+        private System.Windows.Forms.Button btnRemove;
     }
 }
