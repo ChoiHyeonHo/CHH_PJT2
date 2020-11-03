@@ -74,5 +74,13 @@ namespace CHH_PJT2
             frmMembership frm = new frmMembership();
             frm.ShowDialog();
         }
+
+        private void txtPwd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnLogIn.PerformClick();
+            }
+        }
     }
 }

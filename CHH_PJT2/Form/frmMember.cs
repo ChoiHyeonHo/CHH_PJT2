@@ -26,54 +26,30 @@ namespace CHH_PJT2
         private void SetData()
         {
             CommonUtil.SetInitGridView(memberDataGridView);
-            CommonUtil.AddGridTextColumn(memberDataGridView, "학생ID", "stuID", 100); //index[0]
-            CommonUtil.AddGridTextColumn(memberDataGridView, "이름", "stuName", 100); //1
-            CommonUtil.AddGridTextColumn(memberDataGridView, "번호", "phNum", 170); //2
-            CommonUtil.AddGridTextColumn(memberDataGridView, "학교", "school", 120); //3
-            CommonUtil.AddGridTextColumn(memberDataGridView, "학년", "grade", 80); //4 
-            CommonUtil.AddGridTextColumn(memberDataGridView, "수강코드", "lessonCode", 170); //5
-            CommonUtil.AddGridTextColumn(memberDataGridView, "성별", "stuGender", 100); //6
-            CommonUtil.AddGridTextColumn(memberDataGridView, "우편번호", "postalCode", 100);// 7
-            CommonUtil.AddGridTextColumn(memberDataGridView, "기본주소", "priAddress", 170);//8
-            CommonUtil.AddGridTextColumn(memberDataGridView, "상세주소", "detAddress", 120);//9
-            CommonUtil.AddGridTextColumn(memberDataGridView, "생년월일", "birth", 80);//10
-            CommonUtil.AddGridTextColumn(memberDataGridView, "수강등록일", "regDate", 170);//11
-            CommonUtil.AddGridTextColumn(memberDataGridView, "보호자번호", "pPNum", 170);//12
-            CommonUtil.AddGridTextColumn(memberDataGridView, "특이사항", "nsReport", 120);//13
-            CommonUtil.AddGridTextColumn(memberDataGridView, "삭제여부", "deleted", 80);//14
-            CommonUtil.AddGridTextColumn(memberDataGridView, "선행여부", "antecedent", 170);//15
-            CommonUtil.AddGridTextColumn(memberDataGridView, "학생사진", "stuPic", 80);//16
+            CommonUtil.AddGridTextColumn(memberDataGridView, "학생ID", "stuID", 100);                 //index[0]
+            CommonUtil.AddGridTextColumn(memberDataGridView, "이름", "stuName", 100);                 //1
+            CommonUtil.AddGridTextColumn(memberDataGridView, "번호", "phNum", 170);                   //2
+            CommonUtil.AddGridTextColumn(memberDataGridView, "학교", "school", 120);                  //3
+            CommonUtil.AddGridTextColumn(memberDataGridView, "학년", "grade", 80);                    //4 
+            CommonUtil.AddGridTextColumn(memberDataGridView, "수강코드", "lessonCode", 170);          //5
+            CommonUtil.AddGridTextColumn(memberDataGridView, "성별", "stuGender", 10, false);         //6
+            CommonUtil.AddGridTextColumn(memberDataGridView, "우편번호", "postalCode", 10, false);    //7
+            CommonUtil.AddGridTextColumn(memberDataGridView, "기본주소", "priAddress", 10, false);    //8
+            CommonUtil.AddGridTextColumn(memberDataGridView, "상세주소", "detAddress", 10, false);    //9
+            CommonUtil.AddGridTextColumn(memberDataGridView, "생년월일", "birth", 10, false);         //10
+            CommonUtil.AddGridTextColumn(memberDataGridView, "수강등록일", "regDate", 10, false);     //11
+            CommonUtil.AddGridTextColumn(memberDataGridView, "보호자번호", "pPNum", 10, false);       //12
+            CommonUtil.AddGridTextColumn(memberDataGridView, "특이사항", "nsReport", 10, false);      //13
+            CommonUtil.AddGridTextColumn(memberDataGridView, "삭제여부", "deleted", 10, false);       //14
+            CommonUtil.AddGridTextColumn(memberDataGridView, "선행여부", "antecedent", 10, false);    //15
+            CommonUtil.AddGridTextColumn(memberDataGridView, "학생사진", "stuPic", 10, false);        //16
             this.memberDataGridView.Font = new Font("나눔바른고딕", 10, FontStyle.Regular);
-
-            
             MainDB db = new MainDB();
             DataTable dt = db.LoadMemberData();
             db.Dispose();
-
             DataView dataView = new DataView(dt);
             memberDataGridView.DataSource = dataView;
         }
-
-        private void memberDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            List<string> col = new List<string>();
-            col.Add("학생ID");
-            col.Add("이름");
-            col.Add("번호");
-            col.Add("학교");
-            col.Add("학년");
-            col.Add("수강코드");
-            //Id, 이름, 번호, 학교, 학년, 수강코드
-
-            for (int i = 0; i < memberDataGridView.Columns.Count; i++)
-            {
-                if (!col.Contains(memberDataGridView.Columns[i].HeaderText))
-                {
-                    memberDataGridView.Columns[i].Visible = false;
-                }
-            }
-        }
-
 
         private void frmMember_Activated(object sender, EventArgs e)
         {
@@ -108,7 +84,9 @@ namespace CHH_PJT2
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             MainDB db = new MainDB();
-            bool bFlag = db.UpdateMember(txtName.Text, txtNum.Text, txtSchool.Text, txtGrade.Text, dtpBirth.Value, int.Parse(txtlessonCode.Text), dtpRegDate.Value, txtAntecedent.Text, txtPPNum.Text, txtID.Text);
+            SetText st = new SetText(txtID.Text, txtName.Text, rbtnGenderM.Tag.ToString(), txtNum.Text, txtPostalCode.Text, txtPriAddress.Text, txtDetAddress.Text, txtSchool.Text, txtGrade.Text, dtpBirth.Value, int.Parse(txtlessonCode.Text), dtpRegDate.Value, txtPPNum.Text, txtNs.Text, txtAntecedent.Text);
+            bool bFlag;
+            bFlag = db.UpdateMember(st);
 
             if (bFlag)
             {
@@ -118,7 +96,9 @@ namespace CHH_PJT2
             {
                 MessageBox.Show("형식을 잘못 입력하였거나 빈 항목이 있습니다.");
             }
-        }
+            SetData();
+            db.Dispose();
+        } //수정
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
@@ -127,20 +107,14 @@ namespace CHH_PJT2
             rbtnGenderM.Checked = rbtnGenderW.Checked = false;
 
             dtpBirth.Value = dtpRegDate.Value = DateTime.Now;
-        }
+        } // 텍스트내용 초기화
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
             MainDB db = new MainDB();
+            SetText st = new SetText(txtID.Text, txtName.Text, rbtnGenderM.Tag.ToString(), txtNum.Text, txtPostalCode.Text, txtPriAddress.Text, txtDetAddress.Text, txtSchool.Text, txtGrade.Text, dtpBirth.Value, int.Parse(txtlessonCode.Text), dtpRegDate.Value, txtPPNum.Text, txtNs.Text, txtAntecedent.Text);
             bool bFlag;
-            if (rbtnGenderM.Checked == true)
-            {
-                bFlag = db.CreateMember(txtID.Text, txtName.Text, rbtnGenderM.Tag.ToString(), txtNum.Text, txtPostalCode.Text, txtPriAddress.Text, txtDetAddress.Text, txtSchool.Text, txtGrade.Text, dtpBirth.Value, int.Parse(txtlessonCode.Text), dtpRegDate.Value, txtPPNum.Text, txtNs.Text, txtAntecedent.Text);
-            }
-            else
-            {
-                bFlag = db.CreateMember(txtID.Text, txtName.Text, rbtnGenderW.Tag.ToString(), txtNum.Text, txtPostalCode.Text, txtPriAddress.Text, txtDetAddress.Text, txtSchool.Text, txtGrade.Text, dtpBirth.Value, int.Parse(txtlessonCode.Text), dtpRegDate.Value, txtPPNum.Text, txtNs.Text, txtAntecedent.Text);
-            }
+            bFlag = db.CreateMember(st);
 
             if (bFlag)
             {
@@ -150,11 +124,30 @@ namespace CHH_PJT2
             {
                 MessageBox.Show("형식을 잘못 입력하였거나 빈 항목이 있습니다.");
             }
-        }
+            SetData();
+            db.Dispose();
+        } //신규등록
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            MainDB db = new MainDB();
+            SetText st = new SetText(txtID.Text, txtName.Text, rbtnGenderM.Tag.ToString(), txtNum.Text, txtPostalCode.Text, txtPriAddress.Text, txtDetAddress.Text, txtSchool.Text, txtGrade.Text, dtpBirth.Value, int.Parse(txtlessonCode.Text), dtpRegDate.Value, txtPPNum.Text, txtNs.Text, txtAntecedent.Text);
+            bool bFlag;
+            bFlag = db.DeleteMember(st);
 
-        //private void btnRenew_Click(object sender, EventArgs e)
-        //{
-        //    SetData();
-        //}
+            if (bFlag)
+            {
+                MessageBox.Show("정보 삭제가 완료되었습니다.");
+            }
+            else
+            {
+                MessageBox.Show("형식을 잘못 입력하였거나 빈 항목이 있습니다.");
+            }
+            SetData();
+            db.Dispose();
+        } //삭제
+        private void btnRenew_Click(object sender, EventArgs e)
+        {
+            SetData();
+        } //새로고침
     }
 }

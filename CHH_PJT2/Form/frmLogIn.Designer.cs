@@ -49,7 +49,7 @@
             this.lblIDSearch.Location = new System.Drawing.Point(156, 351);
             this.lblIDSearch.Name = "lblIDSearch";
             this.lblIDSearch.Size = new System.Drawing.Size(45, 15);
-            this.lblIDSearch.TabIndex = 14;
+            this.lblIDSearch.TabIndex = 5;
             this.lblIDSearch.Text = "ID 찾기";
             this.lblIDSearch.UseCustomForeColor = true;
             this.lblIDSearch.Click += new System.EventHandler(this.lblIDSearch_Click);
@@ -63,7 +63,7 @@
             this.lblJoin.Location = new System.Drawing.Point(68, 351);
             this.lblJoin.Name = "lblJoin";
             this.lblJoin.Size = new System.Drawing.Size(55, 15);
-            this.lblJoin.TabIndex = 13;
+            this.lblJoin.TabIndex = 4;
             this.lblJoin.Text = "회원가입";
             this.lblJoin.UseCustomForeColor = true;
             this.lblJoin.Click += new System.EventHandler(this.lblJoin_Click);
@@ -78,7 +78,7 @@
             this.btnLogIn.Location = new System.Drawing.Point(54, 280);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(248, 43);
-            this.btnLogIn.TabIndex = 11;
+            this.btnLogIn.TabIndex = 3;
             this.btnLogIn.Text = "Log In";
             this.btnLogIn.UseCustomBackColor = true;
             this.btnLogIn.UseCustomForeColor = true;
@@ -114,13 +114,14 @@
             this.txtPwd.ShortcutsEnabled = true;
             this.txtPwd.ShowClearButton = true;
             this.txtPwd.Size = new System.Drawing.Size(248, 30);
-            this.txtPwd.TabIndex = 9;
+            this.txtPwd.TabIndex = 2;
             this.txtPwd.UseSelectable = true;
             this.txtPwd.UseStyleColors = true;
             this.txtPwd.UseSystemPasswordChar = true;
             this.txtPwd.WaterMark = "Password";
             this.txtPwd.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPwd.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPwd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPwd_KeyPress);
             // 
             // txtID
             // 
@@ -151,7 +152,7 @@
             this.txtID.ShortcutsEnabled = true;
             this.txtID.ShowClearButton = true;
             this.txtID.Size = new System.Drawing.Size(248, 30);
-            this.txtID.TabIndex = 7;
+            this.txtID.TabIndex = 1;
             this.txtID.UseSelectable = true;
             this.txtID.UseStyleColors = true;
             this.txtID.WaterMark = "User ID";
@@ -215,7 +216,7 @@
             this.lblChangePwd.Location = new System.Drawing.Point(234, 351);
             this.lblChangePwd.Name = "lblChangePwd";
             this.lblChangePwd.Size = new System.Drawing.Size(56, 15);
-            this.lblChangePwd.TabIndex = 15;
+            this.lblChangePwd.TabIndex = 6;
             this.lblChangePwd.Text = "Pwd 변경";
             this.lblChangePwd.UseCustomForeColor = true;
             this.lblChangePwd.Click += new System.EventHandler(this.lblChangePwd_Click);
