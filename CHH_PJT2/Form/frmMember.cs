@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinLendingProject;
 
 namespace CHH_PJT2
 {
@@ -19,11 +18,6 @@ namespace CHH_PJT2
         }
 
         private void frmMember_Load(object sender, EventArgs e)
-        {
-            SetData();
-        }
-
-        private void SetData()
         {
             CommonUtil.SetInitGridView(memberDataGridView);
             CommonUtil.AddGridTextColumn(memberDataGridView, "학생ID", "stuID", 100);                 //index[0]
@@ -44,7 +38,13 @@ namespace CHH_PJT2
             CommonUtil.AddGridTextColumn(memberDataGridView, "선행여부", "antecedent", 10, false);    //15
             CommonUtil.AddGridTextColumn(memberDataGridView, "학생사진", "stuPic", 10, false);        //16
             this.memberDataGridView.Font = new Font("나눔바른고딕", 10, FontStyle.Regular);
-            MainDB db = new MainDB();
+
+            SetData();
+        }
+
+        private void SetData()
+        {           
+            MemberDB db = new MemberDB();
             DataTable dt = db.LoadMemberData();
             db.Dispose();
             DataView dataView = new DataView(dt);
@@ -83,21 +83,20 @@ namespace CHH_PJT2
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            MainDB db = new MainDB();
-            SetText st = new SetText(txtID.Text, txtName.Text, rbtnGenderM.Tag.ToString(), txtNum.Text, txtPostalCode.Text, txtPriAddress.Text, txtDetAddress.Text, txtSchool.Text, txtGrade.Text, dtpBirth.Value, int.Parse(txtlessonCode.Text), dtpRegDate.Value, txtPPNum.Text, txtNs.Text, txtAntecedent.Text);
+            MemberDB db = new MemberDB();
+            SetMemberText st = new SetMemberText(txtID.Text, txtName.Text, rbtnGenderM.Tag.ToString(), txtNum.Text, txtPostalCode.Text, txtPriAddress.Text, txtDetAddress.Text, txtSchool.Text, txtGrade.Text, dtpBirth.Value, int.Parse(txtlessonCode.Text), dtpRegDate.Value, txtPPNum.Text, txtNs.Text, txtAntecedent.Text);
             bool bFlag;
             bFlag = db.UpdateMember(st);
 
             if (bFlag)
             {
                 MessageBox.Show("정보 수정이 완료되었습니다.");
+                SetData();
             }
             else
             {
                 MessageBox.Show("형식을 잘못 입력하였거나 빈 항목이 있습니다.");
             }
-            SetData();
-            db.Dispose();
         } //수정
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -111,38 +110,38 @@ namespace CHH_PJT2
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            MainDB db = new MainDB();
-            SetText st = new SetText(txtID.Text, txtName.Text, rbtnGenderM.Tag.ToString(), txtNum.Text, txtPostalCode.Text, txtPriAddress.Text, txtDetAddress.Text, txtSchool.Text, txtGrade.Text, dtpBirth.Value, int.Parse(txtlessonCode.Text), dtpRegDate.Value, txtPPNum.Text, txtNs.Text, txtAntecedent.Text);
+            MemberDB db = new MemberDB();
+            SetMemberText st = new SetMemberText(txtID.Text, txtName.Text, rbtnGenderM.Tag.ToString(), txtNum.Text, txtPostalCode.Text, txtPriAddress.Text, txtDetAddress.Text, txtSchool.Text, txtGrade.Text, dtpBirth.Value, int.Parse(txtlessonCode.Text), dtpRegDate.Value, txtPPNum.Text, txtNs.Text, txtAntecedent.Text);
             bool bFlag;
             bFlag = db.CreateMember(st);
 
             if (bFlag)
             {
                 MessageBox.Show("정보 저장이 완료되었습니다.");
+                SetData();
             }
             else
             {
                 MessageBox.Show("형식을 잘못 입력하였거나 빈 항목이 있습니다.");
             }
-            SetData();
             db.Dispose();
         } //신규등록
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            MainDB db = new MainDB();
-            SetText st = new SetText(txtID.Text, txtName.Text, rbtnGenderM.Tag.ToString(), txtNum.Text, txtPostalCode.Text, txtPriAddress.Text, txtDetAddress.Text, txtSchool.Text, txtGrade.Text, dtpBirth.Value, int.Parse(txtlessonCode.Text), dtpRegDate.Value, txtPPNum.Text, txtNs.Text, txtAntecedent.Text);
+            MemberDB db = new MemberDB();
+            SetMemberText st = new SetMemberText(txtID.Text, txtName.Text, rbtnGenderM.Tag.ToString(), txtNum.Text, txtPostalCode.Text, txtPriAddress.Text, txtDetAddress.Text, txtSchool.Text, txtGrade.Text, dtpBirth.Value, int.Parse(txtlessonCode.Text), dtpRegDate.Value, txtPPNum.Text, txtNs.Text, txtAntecedent.Text);
             bool bFlag;
             bFlag = db.DeleteMember(st);
 
             if (bFlag)
             {
                 MessageBox.Show("정보 삭제가 완료되었습니다.");
+                SetData();
             }
             else
             {
                 MessageBox.Show("형식을 잘못 입력하였거나 빈 항목이 있습니다.");
             }
-            SetData();
             db.Dispose();
         } //삭제
         private void btnRenew_Click(object sender, EventArgs e)

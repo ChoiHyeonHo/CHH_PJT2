@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace CHH_PJT2
 {
-    public class SetText
+    public class SetMemberText
     {
         public string ID { get; set; }
         public string Name { get; set; }
@@ -28,7 +28,7 @@ namespace CHH_PJT2
         public string nsReport { get; set; }
         public string antecedent { get; set; }
 
-        public SetText(string ID, string Name, string Gender, string phNum, string postalCode, string priAddress, string detAddress, string School, string Grade, DateTime birth, int lessonCode, DateTime regDate, string ppNum, string nsReport, string antecedent)
+        public SetMemberText(string ID, string Name, string Gender, string phNum, string postalCode, string priAddress, string detAddress, string School, string Grade, DateTime birth, int lessonCode, DateTime regDate, string ppNum, string nsReport, string antecedent)
         {
             this.ID = ID;
             this.Name = Name;
@@ -48,10 +48,10 @@ namespace CHH_PJT2
         }
     }
 
-    public class MainDB : IDisposable
+    public class MemberDB : IDisposable
     {
         MySqlConnection conn;
-        public MainDB()
+        public MemberDB()
         {
             conn = new MySqlConnection();
             conn.ConnectionString = ConfigurationManager.ConnectionStrings["Academy"].ConnectionString;
@@ -63,7 +63,7 @@ namespace CHH_PJT2
             conn.Close();
         }
 
-        public bool CreateMember(SetText st)
+        public bool CreateMember(SetMemberText st)
         {
             MySqlCommand cmd = new MySqlCommand();
             cmd.CommandText = $@"insert into student(stuID, stuName, stuGender, phNum, postalCode, priAddress, detAddress, school, grade, birth, lessonCode, regDate, pPNum, nsReport, antecedent) values(@stuID, @stuName, @stuGender, @phNum, @postalCode, @priAddress, @detAddress, @school, @grade, @birth, @lessonCode, @regDate, @pPNum, @nsReport, @antecedent); ";
@@ -125,7 +125,7 @@ namespace CHH_PJT2
             }
         }
 
-        public bool UpdateMember(SetText st)
+        public bool UpdateMember(SetMemberText st)
         {
             MySqlCommand cmd = new MySqlCommand();
             cmd.CommandText = $@"update student set stuName = @stuName, stuGender =@stuGender, 
@@ -143,7 +143,7 @@ namespace CHH_PJT2
             cmd.Parameters["@stuName"].Value = st.Name;
 
             cmd.Parameters.Add("@stuGender", MySqlDbType.VarChar);
-            cmd.Parameters["@@stuGender"].Value = st.Gender;
+            cmd.Parameters["@stuGender"].Value = st.Gender;
 
             cmd.Parameters.Add("@phNum", MySqlDbType.VarChar);
             cmd.Parameters["@phNum"].Value = st.phNum;
@@ -192,7 +192,7 @@ namespace CHH_PJT2
             }
         }
 
-        public bool DeleteMember(SetText st)
+        public bool DeleteMember(SetMemberText st)
         {
             MySqlCommand cmd = new MySqlCommand();
             cmd.CommandText = $@"delete from student where stuid = @stuid;";

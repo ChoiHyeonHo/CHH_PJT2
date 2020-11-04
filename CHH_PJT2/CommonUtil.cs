@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-namespace WinLendingProject
+namespace CHH_PJT2
 {
     class CommonUtil
     {
