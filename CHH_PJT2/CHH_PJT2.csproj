@@ -58,14 +58,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttendanceDB.cs" />
     <Compile Include="ClassDB.cs" />
     <Compile Include="CommonUtil.cs" />
     <Compile Include="Form\LogInDB.cs" />
-    <Compile Include="Form\frnAttendance.cs">
+    <Compile Include="Form\frmAttendance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\frnAttendance.Designer.cs">
-      <DependentUpon>frnAttendance.cs</DependentUpon>
+    <Compile Include="Form\frmAttendance.Designer.cs">
+      <DependentUpon>frmAttendance.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\frmBoard.cs">
       <SubType>Form</SubType>
@@ -138,8 +139,8 @@
     <Compile Include="Form\frmSearchID.Designer.cs">
       <DependentUpon>frmSearchID.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form\frnAttendance.resx">
-      <DependentUpon>frnAttendance.cs</DependentUpon>
+    <EmbeddedResource Include="Form\frmAttendance.resx">
+      <DependentUpon>frmAttendance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmBoard.resx">
       <DependentUpon>frmBoard.cs</DependentUpon>
@@ -179,6 +180,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Form\frmSearchID.resx">
       <DependentUpon>frmSearchID.cs</DependentUpon>
@@ -197,6 +199,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-checkmark-144.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-warning-triangle-64.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

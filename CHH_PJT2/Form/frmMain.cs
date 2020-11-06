@@ -20,7 +20,7 @@ namespace CHH_PJT2
         public static frmHome frmHome;
         public static frmMember frmMember;
         public static frmClass frmClass;
-        public static frnAttendance frmAttendance;
+        public static frmAttendance frmAttendance;
         public static frmCounseling frmCounseling;
         public static frmBoard frmBoard;
         public LogIn UserInfo;
@@ -60,11 +60,11 @@ namespace CHH_PJT2
             }
             return frmClass;
         }
-        public static frnAttendance CreateAttendanceForm()
+        public static frmAttendance CreateAttendanceForm()
         {
             if (frmAttendance == null)
             {
-                frmAttendance = new frnAttendance();
+                frmAttendance = new frmAttendance();
             }
             return frmAttendance;
         }
