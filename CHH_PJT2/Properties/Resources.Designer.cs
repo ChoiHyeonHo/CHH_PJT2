@@ -73,6 +73,16 @@ namespace CHH_PJT2.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_close_window_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-close-window-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_delete_128 {
             get {
                 object obj = ResourceManager.GetObject("icons8-delete-128", resourceCulture);
