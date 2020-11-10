@@ -12,7 +12,7 @@ namespace CHH_PJT2
         {
             dgv.AutoGenerateColumns = false;
             dgv.AllowUserToAddRows = false;
-            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.SelectionMode = DataGridViewSelectionMode.CellSelect;
         }
 
         public static void AddGridTextColumn( 

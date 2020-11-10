@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.CouDataGridView = new System.Windows.Forms.DataGridView();
+            this.btnExcel = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtAdvActions = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAdvContents = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.dtpAdvDate = new System.Windows.Forms.DateTimePicker();
+            this.txtMathScore = new System.Windows.Forms.TextBox();
+            this.txtStuID = new System.Windows.Forms.TextBox();
+            this.txtStaffID = new System.Windows.Forms.TextBox();
+            this.txtAdvNum = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -72,7 +73,7 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CouDataGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -90,6 +91,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tabControl1.ItemSize = new System.Drawing.Size(80, 30);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -99,11 +101,11 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button4);
-            this.tabPage1.Controls.Add(this.button3);
+            this.tabPage1.Controls.Add(this.CouDataGridView);
+            this.tabPage1.Controls.Add(this.btnExcel);
+            this.tabPage1.Controls.Add(this.btnUpdate);
             this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.btnInsert);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.panel1);
@@ -115,23 +117,47 @@
             this.tabPage1.Text = "상담중";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // CouDataGridView
             // 
-            this.button4.Location = new System.Drawing.Point(505, 136);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 37);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "엑셀 저장";
-            this.button4.UseVisualStyleBackColor = true;
+            this.CouDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.CouDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.CouDataGridView.ColumnHeadersHeight = 25;
+            this.CouDataGridView.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.CouDataGridView.Location = new System.Drawing.Point(14, 6);
+            this.CouDataGridView.Name = "CouDataGridView";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CouDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.CouDataGridView.RowTemplate.Height = 23;
+            this.CouDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.CouDataGridView.Size = new System.Drawing.Size(485, 167);
+            this.CouDataGridView.TabIndex = 67;
+            this.CouDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CouDataGridView_CellDoubleClick);
             // 
-            // button3
+            // btnExcel
             // 
-            this.button3.Location = new System.Drawing.Point(505, 92);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 37);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "출력";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnExcel.Location = new System.Drawing.Point(505, 136);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(75, 37);
+            this.btnExcel.TabIndex = 13;
+            this.btnExcel.Text = "엑셀 저장";
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(505, 92);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 37);
+            this.btnUpdate.TabIndex = 12;
+            this.btnUpdate.Text = "정보 수정";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // button2
             // 
@@ -141,28 +167,21 @@
             this.button2.TabIndex = 11;
             this.button2.Text = "불러오기";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // dataGridView1
+            // btnInsert
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(14, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(485, 167);
-            this.dataGridView1.TabIndex = 10;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(505, 49);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 37);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "정보 저장";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnInsert.Location = new System.Drawing.Point(505, 49);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(75, 37);
+            this.btnInsert.TabIndex = 9;
+            this.btnInsert.Text = "신규 저장";
+            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtAdvActions);
             this.groupBox2.Location = new System.Drawing.Point(8, 343);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(817, 253);
@@ -170,17 +189,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "조치 내용";
             // 
-            // textBox2
+            // txtAdvActions
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 20);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(805, 227);
-            this.textBox2.TabIndex = 6;
+            this.txtAdvActions.Location = new System.Drawing.Point(6, 20);
+            this.txtAdvActions.Multiline = true;
+            this.txtAdvActions.Name = "txtAdvActions";
+            this.txtAdvActions.Size = new System.Drawing.Size(805, 227);
+            this.txtAdvActions.TabIndex = 6;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtAdvContents);
             this.groupBox1.Location = new System.Drawing.Point(8, 179);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(817, 158);
@@ -188,21 +207,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "상담 내용";
             // 
-            // textBox1
+            // txtAdvContents
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 20);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(805, 132);
-            this.textBox1.TabIndex = 6;
+            this.txtAdvContents.Location = new System.Drawing.Point(6, 20);
+            this.txtAdvContents.Multiline = true;
+            this.txtAdvContents.Name = "txtAdvContents";
+            this.txtAdvContents.Size = new System.Drawing.Size(805, 132);
+            this.txtAdvContents.TabIndex = 6;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.dtpAdvDate);
+            this.panel1.Controls.Add(this.txtMathScore);
+            this.panel1.Controls.Add(this.txtStuID);
+            this.panel1.Controls.Add(this.txtStaffID);
+            this.panel1.Controls.Add(this.txtAdvNum);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label10);
@@ -213,89 +232,94 @@
             this.panel1.Size = new System.Drawing.Size(233, 169);
             this.panel1.TabIndex = 5;
             // 
-            // dateTimePicker1
+            // dtpAdvDate
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(88, 42);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(122, 21);
-            this.dateTimePicker1.TabIndex = 10;
+            this.dtpAdvDate.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpAdvDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpAdvDate.Location = new System.Drawing.Point(88, 42);
+            this.dtpAdvDate.Name = "dtpAdvDate";
+            this.dtpAdvDate.Size = new System.Drawing.Size(122, 21);
+            this.dtpAdvDate.TabIndex = 10;
             // 
-            // textBox7
+            // txtMathScore
             // 
-            this.textBox7.Location = new System.Drawing.Point(88, 135);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(122, 21);
-            this.textBox7.TabIndex = 9;
+            this.txtMathScore.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtMathScore.Location = new System.Drawing.Point(88, 135);
+            this.txtMathScore.Name = "txtMathScore";
+            this.txtMathScore.Size = new System.Drawing.Size(122, 21);
+            this.txtMathScore.TabIndex = 9;
             // 
-            // textBox6
+            // txtStuID
             // 
-            this.textBox6.Location = new System.Drawing.Point(88, 103);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(122, 21);
-            this.textBox6.TabIndex = 8;
+            this.txtStuID.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtStuID.Location = new System.Drawing.Point(88, 103);
+            this.txtStuID.Name = "txtStuID";
+            this.txtStuID.Size = new System.Drawing.Size(122, 21);
+            this.txtStuID.TabIndex = 8;
             // 
-            // textBox5
+            // txtStaffID
             // 
-            this.textBox5.Location = new System.Drawing.Point(88, 71);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(122, 21);
-            this.textBox5.TabIndex = 7;
+            this.txtStaffID.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtStaffID.Location = new System.Drawing.Point(88, 71);
+            this.txtStaffID.Name = "txtStaffID";
+            this.txtStaffID.Size = new System.Drawing.Size(122, 21);
+            this.txtStaffID.TabIndex = 7;
             // 
-            // textBox3
+            // txtAdvNum
             // 
-            this.textBox3.Location = new System.Drawing.Point(88, 7);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(122, 21);
-            this.textBox3.TabIndex = 5;
+            this.txtAdvNum.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtAdvNum.Location = new System.Drawing.Point(88, 7);
+            this.txtAdvNum.Name = "txtAdvNum";
+            this.txtAdvNum.Size = new System.Drawing.Size(122, 21);
+            this.txtAdvNum.TabIndex = 5;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label9.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label9.Location = new System.Drawing.Point(12, 12);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 16);
+            this.label9.Size = new System.Drawing.Size(58, 14);
             this.label9.TabIndex = 0;
             this.label9.Text = "상담번호: ";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label13.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label13.Location = new System.Drawing.Point(12, 140);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(82, 16);
+            this.label13.Size = new System.Drawing.Size(58, 14);
             this.label13.TabIndex = 4;
             this.label13.Text = "수학점수: ";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label10.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.Location = new System.Drawing.Point(12, 44);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 16);
+            this.label10.Size = new System.Drawing.Size(58, 14);
             this.label10.TabIndex = 1;
             this.label10.Text = "상담일자: ";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label12.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label12.Location = new System.Drawing.Point(12, 108);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(63, 16);
+            this.label12.Size = new System.Drawing.Size(48, 14);
             this.label12.TabIndex = 3;
             this.label12.Text = "학생 ID:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label11.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label11.Location = new System.Drawing.Point(12, 76);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(63, 16);
+            this.label11.Size = new System.Drawing.Size(48, 14);
             this.label11.TabIndex = 2;
             this.label11.Text = "직원 ID:";
             // 
@@ -499,18 +523,18 @@
             this.dataGridView3.Size = new System.Drawing.Size(827, 119);
             this.dataGridView3.TabIndex = 1;
             // 
-            // CounselingForm
+            // frmCounseling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 642);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "CounselingForm";
+            this.Name = "frmCounseling";
             this.Text = "CounselingForm";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CouDataGridView)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -548,25 +572,24 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAdvContents;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtAdvActions;
+        private System.Windows.Forms.TextBox txtMathScore;
+        private System.Windows.Forms.TextBox txtStuID;
+        private System.Windows.Forms.TextBox txtStaffID;
+        private System.Windows.Forms.TextBox txtAdvNum;
+        private System.Windows.Forms.DateTimePicker dtpAdvDate;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBox8;
@@ -575,5 +598,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DataGridView CouDataGridView;
     }
 }
