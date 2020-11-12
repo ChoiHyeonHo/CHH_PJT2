@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +35,19 @@ namespace CHH_PJT2
             dgv.Columns.Add(col);
         }
 
+        public static void BindingComboBox(ComboBox cbo, System.Data.DataTable dt, string valueMember, string displayMember, bool blankItemAdd = true)
+        {
+            if (blankItemAdd)
+            {
+                DataRow dr = dt.NewRow();
+                dr[displayMember] = "";
+                dt.Rows.InsertAt(dr, 0);
+                dt.AcceptChanges();
+            }
 
+            cbo.ValueMember = valueMember;
+            cbo.DisplayMember = displayMember;
+            cbo.DataSource = dt;
+        }
     }
 }

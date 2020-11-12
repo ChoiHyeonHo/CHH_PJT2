@@ -12,6 +12,8 @@ namespace CHH_PJT2
 {
     public partial class frmMember : Form
     {
+        string cboTxt = "";
+
         public frmMember()
         {
             InitializeComponent();
@@ -24,7 +26,7 @@ namespace CHH_PJT2
             CommonUtil.AddGridTextColumn(memberDataGridView, "이름", "stuName", 100);                 //1
             CommonUtil.AddGridTextColumn(memberDataGridView, "번호", "phNum", 170);                   //2
             CommonUtil.AddGridTextColumn(memberDataGridView, "학교", "school", 120);                  //3
-            CommonUtil.AddGridTextColumn(memberDataGridView, "학년", "grade", 80);                    //4 
+            CommonUtil.AddGridTextColumn(memberDataGridView, "학년", "class", 80);                    //4 
             CommonUtil.AddGridTextColumn(memberDataGridView, "수강코드", "lessonCode", 170);          //5
             CommonUtil.AddGridTextColumn(memberDataGridView, "성별", "stuGender", 10, false);         //6
             CommonUtil.AddGridTextColumn(memberDataGridView, "우편번호", "postalCode", 10, false);    //7
@@ -40,6 +42,13 @@ namespace CHH_PJT2
             this.memberDataGridView.Font = new Font("나눔바른고딕", 10, FontStyle.Regular);
 
             SetData();
+
+            string[] codes = { "ClassType" };
+            MemberDB db = new MemberDB();
+            DataSet ds = db.GetCommonCode(codes);
+
+            CommonUtil.BindingComboBox(comboBox1, ds.Tables["ClassType"], "lessonCode", "Name");
+            SetMemberText st = new SetMemberText(comboBox1.Text);
         }
 
         private void SetData()
@@ -146,7 +155,11 @@ namespace CHH_PJT2
         } //삭제
         private void btnRenew_Click(object sender, EventArgs e)
         {
-            SetData();
+            MemberDB db = new MemberDB();
+            DataTable dt = db.LoadClass(comboBox1.Text);
+            db.Dispose();
+            DataView dataView = new DataView(dt);
+            memberDataGridView.DataSource = dataView;
         } //새로고침
     }
 }

@@ -33,6 +33,13 @@ namespace CHH_PJT2
             this.classDataGridView.Font = new Font("나눔바른고딕", 10, FontStyle.Regular);
 
             SetData();
+
+            string[] codes = { "LessonType" };
+            MemberDB db = new MemberDB();
+            DataSet ds = db.GetCommonCode(codes);
+
+            CommonUtil.BindingComboBox(comboBox1, ds.Tables["LessonType"], "Code", "Name");
+            SetMemberText st = new SetMemberText(comboBox1.Text);
         }
 
         private void SetData()
@@ -111,6 +118,15 @@ namespace CHH_PJT2
             txtLessonName.Text = txtLessonCode.Text = txtStaffID.Text = txtAmount.Text = txtNsReport.Text = "";
             dtpStartDate.Value = dtpEndDate.Value = dtpStartTime.Value = dtpEndTime.Value = DateTime.Now;
             cbClass.Text = null;
+        }
+
+        private void btnRenew_Click(object sender, EventArgs e)
+        {
+            ClassDB db = new ClassDB();
+            DataTable dt = db.LoadClass(comboBox1.Text);
+            db.Dispose();
+            DataView dataView = new DataView(dt);
+            classDataGridView.DataSource = dataView;
         }
     }
 }

@@ -58,6 +58,17 @@ namespace CHH_PJT2
             return dt;
         }
 
+        public DataTable LoadClass(string cboText)
+        {
+            DataTable dt = new DataTable();
+            string sql = $@"select lessonCode, lessonName, classDistribution, staffID, lessonStartDate, lessonEndDate, 
+                                  lessonStartTime, lessonEndTime, lessonAmount, lessonNsReport from class where lessonCode = '{cboText}';";
+            MySqlDataAdapter da = new MySqlDataAdapter(sql, conn);
+            da.Fill(dt);
+
+            return dt;
+        }
+
         public bool CreateClass(SetClassText st)
         {
             MySqlCommand cmd = new MySqlCommand();

@@ -17,7 +17,7 @@ namespace CHH_PJT2
         public string phNum { get; set; }
         public string address { get; set; }
         public DateTime birth { get; set; }
-        public int JobClassifyID { get; set; }
+        public string JobClassifyID { get; set; }
         public string pwd { get; set; }
     }
 
@@ -53,7 +53,7 @@ namespace CHH_PJT2
                 login.ID = reader["staffID"].ToString();
                 login.pwd = reader["staffPwd"].ToString();
                 login.Name = reader["staffName"].ToString();
-                login.JobClassifyID =Convert.ToInt32(reader["jobClassifyID"]);
+                login.JobClassifyID =reader["jobClassifyID"].ToString();
                 return login;
             }
             else

@@ -20,15 +20,16 @@ namespace CHH_PJT2
         public string priAddress { get; set; }
         public string detAddress { get; set; }
         public string School { get; set; }
-        public string Grade { get; set; }
+        public string Class { get; set; }
         public DateTime birth { get; set; }
         public int lessonCode { get; set; }
         public DateTime regDate { get; set; }
         public string ppNum { get; set; }
         public string nsReport { get; set; }
         public string antecedent { get; set; }
+        public string combobox { get; set; }
 
-        public SetMemberText(string ID, string Name, string Gender, string phNum, string postalCode, string priAddress, string detAddress, string School, string Grade, DateTime birth, int lessonCode, DateTime regDate, string ppNum, string nsReport, string antecedent)
+        public SetMemberText(string ID, string Name, string Gender, string phNum, string postalCode, string priAddress, string detAddress, string School, string Class, DateTime birth, int lessonCode, DateTime regDate, string ppNum, string nsReport, string antecedent)
         {
             this.ID = ID;
             this.Name = Name;
@@ -38,13 +39,18 @@ namespace CHH_PJT2
             this.priAddress = priAddress;
             this.detAddress = detAddress;
             this.School = School;
-            this.Grade = Grade;
+            this.Class = Class;
             this.birth = birth;
             this.lessonCode = lessonCode;
             this.regDate = regDate;
             this.ppNum = ppNum;
             this.nsReport = nsReport;
             this.antecedent = antecedent;
+        }
+
+        public SetMemberText(string combobox)
+        {
+            this.combobox = combobox;
         }
     }
 
@@ -63,10 +69,30 @@ namespace CHH_PJT2
             conn.Close();
         }
 
+        public bool SetCombo(SetMemberText st)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = $@"select stuID, stuName, stuGender, phNum, postalCode, priAddress, detAddress, school, class, birth, lessonCode, regDate, pPNum, nsReport, antecedent
+                                                       from student where class = @class; ";
+            cmd.Connection = conn;
+
+            cmd.Parameters.Add("@class", MySqlDbType.VarChar);
+            cmd.Parameters["@class"].Value = st.combobox;
+            int rows = cmd.ExecuteNonQuery();
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public bool CreateMember(SetMemberText st)
         {
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = $@"insert into student(stuID, stuName, stuGender, phNum, postalCode, priAddress, detAddress, school, grade, birth, lessonCode, regDate, pPNum, nsReport, antecedent) values(@stuID, @stuName, @stuGender, @phNum, @postalCode, @priAddress, @detAddress, @school, @grade, @birth, @lessonCode, @regDate, @pPNum, @nsReport, @antecedent); ";
+            cmd.CommandText = $@"insert into student(stuID, stuName, stuGender, phNum, postalCode, priAddress, detAddress, school, class, birth, lessonCode, regDate, pPNum, nsReport, antecedent) values(@stuID, @stuName, @stuGender, @phNum, @postalCode, @priAddress, @detAddress, @school, @class, @birth, @lessonCode, @regDate, @pPNum, @nsReport, @antecedent); ";
             cmd.Connection = conn;
 
             cmd.Parameters.Add("@stuID", MySqlDbType.VarChar);
@@ -93,8 +119,8 @@ namespace CHH_PJT2
             cmd.Parameters.Add("@school", MySqlDbType.VarChar);
             cmd.Parameters["@school"].Value = st.School;
 
-            cmd.Parameters.Add("@grade", MySqlDbType.VarChar);
-            cmd.Parameters["@grade"].Value = st.Grade;
+            cmd.Parameters.Add("@class", MySqlDbType.VarChar);
+            cmd.Parameters["@class"].Value = st.Class;
 
             cmd.Parameters.Add("@birth", MySqlDbType.Date);
             cmd.Parameters["@birth"].Value = st.birth;
@@ -130,7 +156,7 @@ namespace CHH_PJT2
             MySqlCommand cmd = new MySqlCommand();
             cmd.CommandText = $@"update student set stuName = @stuName, stuGender =@stuGender, 
                                  phNum = @phNum, postalCode =@postalCode, priAddress =@priAddress, 
-                                 detAddress = @detAddress, school = @school, grade = @grade, 
+                                 detAddress = @detAddress, school = @school, class = @class, 
                                  birth = @birth, lessonCode = @lessonCode, regDate = @regDate, 
                                  pPNum = @pPNum, nsReport = @nsReport, antecedent = @antecedent 
                                  where stuId = @stuId;";
@@ -160,8 +186,8 @@ namespace CHH_PJT2
             cmd.Parameters.Add("@school", MySqlDbType.VarChar);
             cmd.Parameters["@school"].Value = st.School;
 
-            cmd.Parameters.Add("@grade", MySqlDbType.VarChar);
-            cmd.Parameters["@grade"].Value = st.Grade;
+            cmd.Parameters.Add("@class", MySqlDbType.VarChar);
+            cmd.Parameters["@class"].Value = st.Class;
 
             cmd.Parameters.Add("@birth", MySqlDbType.Date);
             cmd.Parameters["@birth"].Value = st.birth;
@@ -211,14 +237,44 @@ namespace CHH_PJT2
                 return false;
             }
         }
+
         public DataTable LoadMemberData()
         {
             DataTable dt = new DataTable();
-            string sql = @"select stuID, stuName, stuGender, phNum, postalCode, priAddress, detAddress, school, grade,              birth, lessonCode, regDate, pPNum, nsReport, deleted, antecedent, stuPic from student;";
+            string sql = @"select stuID, stuName, stuGender, phNum, postalCode, priAddress, detAddress, school, class,              birth, lessonCode, regDate, pPNum, nsReport, deleted, antecedent, stuPic from student;";
             MySqlDataAdapter da = new MySqlDataAdapter(sql, conn);
             da.Fill(dt);
 
             return dt;
+        }
+        public DataTable LoadClass(string cboText)
+        {
+            DataTable dt = new DataTable();
+            //frmMember frm = new frmMember();
+            //string cla =frm.comboBox1.
+            string sql = $@"select stuID, stuName, stuGender, phNum, postalCode, priAddress, detAddress, school, class,              birth, lessonCode, regDate, pPNum, nsReport, deleted, antecedent, stuPic from student where class = '{cboText}'";
+            MySqlDataAdapter da = new MySqlDataAdapter(sql, conn);
+            da.Fill(dt);
+
+            return dt;
+        }
+
+        public DataSet GetCommonCode(string[] categorys)
+        {
+            string sql = @"SELECT Code, Category, Name, PCode
+                            from CommonCode where Category = @Category
+                            order by Name;";
+
+            DataSet ds = new DataSet();
+            MySqlDataAdapter da = new MySqlDataAdapter(sql, conn);
+            da.SelectCommand.Parameters.Add("@Category", MySqlDbType.VarChar);
+
+            foreach (string category in categorys)
+            {
+                da.SelectCommand.Parameters["@Category"].Value = category;
+                da.Fill(ds, category);
+            }
+            return ds;
         }
     }
 }

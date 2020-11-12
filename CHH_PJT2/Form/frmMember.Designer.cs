@@ -516,7 +516,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtPPNum;
         private System.Windows.Forms.TextBox txtNs;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.RadioButton rbtnGenderW;
@@ -533,5 +532,6 @@
         private System.Windows.Forms.Button btnSearchAddress;
         private System.Windows.Forms.DateTimePicker dtpBirth;
         private System.Windows.Forms.Button btnRemove;
+        public System.Windows.Forms.ComboBox comboBox1;
     }
 }
