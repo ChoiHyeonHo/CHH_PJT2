@@ -21,7 +21,7 @@ namespace CHH_PJT2
         public DateTime attendanceDate { get; set; }
         public string recordContent { get; set; }
         public string stuName { get; set; }
-        public int lessonCode { get; set; }
+        public string lessonCode { get; set; }
 
         public SetAttendanceText(DateTime enteringTime, string stuName)
         {
@@ -64,6 +64,17 @@ namespace CHH_PJT2
             string sql = @"select A.attendanceNum, A.stuID, A.enteringTime, A.entranceTime, A.lateness, A.absence, 
 	                              A.early_Leave, A.attendanceDate, A.recordContent, S.stuName, S.lessonCode
                                   from student S inner join attendance A on A.stuID = S.stuID; ";
+            MySqlDataAdapter da = new MySqlDataAdapter(sql, conn);
+            da.Fill(dt);
+            return dt;
+        }
+
+        public DataTable LoadLesson(string cboText)
+        {
+            DataTable dt = new DataTable();
+            string sql = $@"select A.attendanceNum, A.stuID, A.enteringTime, A.entranceTime, A.lateness, A.absence, 
+	                              A.early_Leave, A.attendanceDate, A.recordContent, S.stuName, S.lessonCode
+                                  from student S inner join attendance A on A.stuID = S.stuID where S.lessonCode = '{cboText}'; ";
             MySqlDataAdapter da = new MySqlDataAdapter(sql, conn);
             da.Fill(dt);
             return dt;

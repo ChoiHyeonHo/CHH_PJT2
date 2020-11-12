@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button3 = new System.Windows.Forms.Button();
             this.dtpAttendanceDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -249,14 +249,14 @@
             this.AttDataGridView.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.AttDataGridView.Location = new System.Drawing.Point(18, 49);
             this.AttDataGridView.Name = "AttDataGridView";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AttDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AttDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.AttDataGridView.RowTemplate.Height = 23;
             this.AttDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.AttDataGridView.Size = new System.Drawing.Size(806, 448);
@@ -277,27 +277,27 @@
             this.결석변경ToolStripMenuItem,
             this.기타사항ToolStripMenuItem});
             this.출결변경ToolStripMenuItem.Name = "출결변경ToolStripMenuItem";
-            this.출결변경ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.출결변경ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.출결변경ToolStripMenuItem.Text = "출석 설정";
             // 
             // 출석변경ToolStripMenuItem
             // 
             this.출석변경ToolStripMenuItem.Name = "출석변경ToolStripMenuItem";
-            this.출석변경ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.출석변경ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.출석변경ToolStripMenuItem.Text = "출석변경";
             this.출석변경ToolStripMenuItem.Click += new System.EventHandler(this.출결변경ToolStripMenuItem_Click_1);
             // 
             // 결석변경ToolStripMenuItem
             // 
             this.결석변경ToolStripMenuItem.Name = "결석변경ToolStripMenuItem";
-            this.결석변경ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.결석변경ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.결석변경ToolStripMenuItem.Text = "결석변경";
             this.결석변경ToolStripMenuItem.Click += new System.EventHandler(this.결석변경ToolStripMenuItem_Click);
             // 
             // 기타사항ToolStripMenuItem
             // 
             this.기타사항ToolStripMenuItem.Name = "기타사항ToolStripMenuItem";
-            this.기타사항ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.기타사항ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.기타사항ToolStripMenuItem.Text = "기타사항";
             this.기타사항ToolStripMenuItem.Click += new System.EventHandler(this.기타사항ToolStripMenuItem_Click);
             // 
@@ -311,6 +311,7 @@
             this.btnRenew.TabIndex = 67;
             this.btnRenew.Text = "새로고침";
             this.btnRenew.UseVisualStyleBackColor = true;
+            this.btnRenew.Click += new System.EventHandler(this.btnRenew_Click);
             // 
             // frmAttendance
             // 

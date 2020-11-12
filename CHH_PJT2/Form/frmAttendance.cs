@@ -66,6 +66,13 @@ namespace CHH_PJT2
             this.AttDataGridView.Font = new Font("나눔바른고딕", 10, FontStyle.Regular);
 
             SetData();
+
+            string[] codes = { "LessonType" };
+            MemberDB db = new MemberDB();
+            DataSet ds = db.GetCommonCode(codes);
+
+            CommonUtil.BindingComboBox(comboBox1, ds.Tables["LessonType"], "lessonCode", "Code");
+            SetMemberText st = new SetMemberText(comboBox1.Text);
         }
 
         private void HeaderCheckBox_Click(object sender, EventArgs e) //4
@@ -157,6 +164,15 @@ namespace CHH_PJT2
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRenew_Click(object sender, EventArgs e)
+        {
+            AttendanceDB db = new AttendanceDB();
+            DataTable dt = db.LoadLesson(comboBox1.Text);
+            db.Dispose();
+            DataView dataView = new DataView(dt);
+            AttDataGridView.DataSource = dataView;
         }
     }
 }

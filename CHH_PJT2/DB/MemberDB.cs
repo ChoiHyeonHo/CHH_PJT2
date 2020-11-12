@@ -22,14 +22,14 @@ namespace CHH_PJT2
         public string School { get; set; }
         public string Class { get; set; }
         public DateTime birth { get; set; }
-        public int lessonCode { get; set; }
+        public string lessonCode { get; set; }
         public DateTime regDate { get; set; }
         public string ppNum { get; set; }
         public string nsReport { get; set; }
         public string antecedent { get; set; }
         public string combobox { get; set; }
 
-        public SetMemberText(string ID, string Name, string Gender, string phNum, string postalCode, string priAddress, string detAddress, string School, string Class, DateTime birth, int lessonCode, DateTime regDate, string ppNum, string nsReport, string antecedent)
+        public SetMemberText(string ID, string Name, string Gender, string phNum, string postalCode, string priAddress, string detAddress, string School, string Class, DateTime birth, string lessonCode, DateTime regDate, string ppNum, string nsReport, string antecedent)
         {
             this.ID = ID;
             this.Name = Name;
@@ -125,7 +125,7 @@ namespace CHH_PJT2
             cmd.Parameters.Add("@birth", MySqlDbType.Date);
             cmd.Parameters["@birth"].Value = st.birth;
 
-            cmd.Parameters.Add("@lessonCode", MySqlDbType.Int32);
+            cmd.Parameters.Add("@lessonCode", MySqlDbType.VarChar);
             cmd.Parameters["@lessonCode"].Value = st.lessonCode;
 
             cmd.Parameters.Add("@regDate", MySqlDbType.Date);
@@ -192,7 +192,7 @@ namespace CHH_PJT2
             cmd.Parameters.Add("@birth", MySqlDbType.Date);
             cmd.Parameters["@birth"].Value = st.birth;
 
-            cmd.Parameters.Add("@lessonCode", MySqlDbType.Int32);
+            cmd.Parameters.Add("@lessonCode", MySqlDbType.VarChar);
             cmd.Parameters["@lessonCode"].Value = st.lessonCode;
 
             cmd.Parameters.Add("@regDate", MySqlDbType.Date);

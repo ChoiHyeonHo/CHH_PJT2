@@ -62,8 +62,7 @@ namespace CHH_PJT2
         {
             AttendanceDB db = new AttendanceDB();
             SetAttendanceText st = new SetAttendanceText(dtpEnteringTime.Value, dtpEntranceTime.Value, Convert.ToChar(rbtnLatenessY.Text.ToUpper().Trim()), Convert.ToChar(rbtnLeaveY.Text.ToUpper().Trim()), txtRecordContent.Text, txtName.Text);
-            bool bFlag = db.UpdateEnteranceTime(st);
-            if (bFlag)
+            bool bFlag = db.UpdateETC(st);            if (bFlag)
             {
                 MessageBox.Show("정보 수정이 완료되었습니다.");
             }

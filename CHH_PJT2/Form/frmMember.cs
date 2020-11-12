@@ -12,7 +12,6 @@ namespace CHH_PJT2
 {
     public partial class frmMember : Form
     {
-        string cboTxt = "";
 
         public frmMember()
         {
@@ -93,7 +92,7 @@ namespace CHH_PJT2
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             MemberDB db = new MemberDB();
-            SetMemberText st = new SetMemberText(txtID.Text, txtName.Text, rbtnGenderM.Tag.ToString(), txtNum.Text, txtPostalCode.Text, txtPriAddress.Text, txtDetAddress.Text, txtSchool.Text, txtGrade.Text, dtpBirth.Value, int.Parse(txtlessonCode.Text), dtpRegDate.Value, txtPPNum.Text, txtNs.Text, txtAntecedent.Text);
+            SetMemberText st = new SetMemberText(txtID.Text, txtName.Text, rbtnGenderM.Tag.ToString(), txtNum.Text, txtPostalCode.Text, txtPriAddress.Text, txtDetAddress.Text, txtSchool.Text, txtGrade.Text, dtpBirth.Value, txtlessonCode.Text, dtpRegDate.Value, txtPPNum.Text, txtNs.Text, txtAntecedent.Text);
             bool bFlag;
             bFlag = db.UpdateMember(st);
 
@@ -120,7 +119,7 @@ namespace CHH_PJT2
         private void btnCreate_Click(object sender, EventArgs e)
         {
             MemberDB db = new MemberDB();
-            SetMemberText st = new SetMemberText(txtID.Text, txtName.Text, rbtnGenderM.Tag.ToString(), txtNum.Text, txtPostalCode.Text, txtPriAddress.Text, txtDetAddress.Text, txtSchool.Text, txtGrade.Text, dtpBirth.Value, int.Parse(txtlessonCode.Text), dtpRegDate.Value, txtPPNum.Text, txtNs.Text, txtAntecedent.Text);
+            SetMemberText st = new SetMemberText(txtID.Text, txtName.Text, rbtnGenderM.Tag.ToString(), txtNum.Text, txtPostalCode.Text, txtPriAddress.Text, txtDetAddress.Text, txtSchool.Text, txtGrade.Text, dtpBirth.Value, txtlessonCode.Text, dtpRegDate.Value, txtPPNum.Text, txtNs.Text, txtAntecedent.Text);
             bool bFlag;
             bFlag = db.CreateMember(st);
 
@@ -138,7 +137,7 @@ namespace CHH_PJT2
         private void btnDelete_Click(object sender, EventArgs e)
         {
             MemberDB db = new MemberDB();
-            SetMemberText st = new SetMemberText(txtID.Text, txtName.Text, rbtnGenderM.Tag.ToString(), txtNum.Text, txtPostalCode.Text, txtPriAddress.Text, txtDetAddress.Text, txtSchool.Text, txtGrade.Text, dtpBirth.Value, int.Parse(txtlessonCode.Text), dtpRegDate.Value, txtPPNum.Text, txtNs.Text, txtAntecedent.Text);
+            SetMemberText st = new SetMemberText(txtID.Text, txtName.Text, rbtnGenderM.Tag.ToString(), txtNum.Text, txtPostalCode.Text, txtPriAddress.Text, txtDetAddress.Text, txtSchool.Text, txtGrade.Text, dtpBirth.Value, txtlessonCode.Text, dtpRegDate.Value, txtPPNum.Text, txtNs.Text, txtAntecedent.Text);
             bool bFlag;
             bFlag = db.DeleteMember(st);
 

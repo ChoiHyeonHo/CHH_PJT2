@@ -20,7 +20,7 @@ namespace CHH_PJT2
         private void frmClass_Load(object sender, EventArgs e)
         {
             CommonUtil.SetInitGridView(classDataGridView);
-            CommonUtil.AddGridTextColumn(classDataGridView, "강의코드", "lessonCode", 50);                   //index[0]
+            CommonUtil.AddGridTextColumn(classDataGridView, "강의", "lessonCode", 50);                   //index[0]
             CommonUtil.AddGridTextColumn(classDataGridView, "강의명", "lessonName", 80);                     //1
             CommonUtil.AddGridTextColumn(classDataGridView, "클래스", "classDistribution", 60);              //2
             CommonUtil.AddGridTextColumn(classDataGridView, "직원ID", "staffID", 70);                        //3
@@ -68,7 +68,7 @@ namespace CHH_PJT2
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             ClassDB db = new ClassDB();
-            SetClassText st = new SetClassText(int.Parse(txtLessonCode.Text), txtLessonName.Text, cbClass.Text, txtStaffID.Text, dtpStartDate.Value, dtpEndDate.Value, dtpStartTime.Value, dtpEndTime.Value, int.Parse(txtAmount.Text), txtNsReport.Text);
+            SetClassText st = new SetClassText(txtLessonCode.Text, txtLessonName.Text, cbClass.Text, txtStaffID.Text, dtpStartDate.Value, dtpEndDate.Value, dtpStartTime.Value, dtpEndTime.Value, int.Parse(txtAmount.Text), txtNsReport.Text);
             bool bFlag = db.UpdateClass(st);
             if (bFlag)
             {
@@ -84,7 +84,7 @@ namespace CHH_PJT2
         private void btnCreate_Click(object sender, EventArgs e)
         {
             ClassDB db = new ClassDB();
-            SetClassText st = new SetClassText(int.Parse(txtLessonCode.Text), txtLessonName.Text, cbClass.Text, txtStaffID.Text, dtpStartDate.Value, dtpEndDate.Value, dtpStartTime.Value, dtpEndTime.Value, int.Parse(txtAmount.Text), txtNsReport.Text);
+            SetClassText st = new SetClassText(txtLessonCode.Text, txtLessonName.Text, cbClass.Text, txtStaffID.Text, dtpStartDate.Value, dtpEndDate.Value, dtpStartTime.Value, dtpEndTime.Value, int.Parse(txtAmount.Text), txtNsReport.Text);
             bool bFlag = db.CreateClass(st);
             if (bFlag)
             {
@@ -100,7 +100,7 @@ namespace CHH_PJT2
         private void btnDelete_Click(object sender, EventArgs e)
         {
             ClassDB db = new ClassDB();
-            SetClassText st = new SetClassText(int.Parse(txtLessonCode.Text), txtLessonName.Text, cbClass.Text, txtStaffID.Text, dtpStartDate.Value, dtpEndDate.Value, dtpStartTime.Value, dtpEndTime.Value, int.Parse(txtAmount.Text), txtNsReport.Text);
+            SetClassText st = new SetClassText(txtLessonCode.Text, txtLessonName.Text, cbClass.Text, txtStaffID.Text, dtpStartDate.Value, dtpEndDate.Value, dtpStartTime.Value, dtpEndTime.Value, int.Parse(txtAmount.Text), txtNsReport.Text);
             bool bFlag = db.DeleteClass(st);
             if (bFlag)
             {

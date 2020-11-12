@@ -12,7 +12,7 @@ namespace CHH_PJT2
 {
     public class SetClassText
     {
-        public int lessonCode { get; set; }
+        public string lessonCode { get; set; }
         public string lessonName { get; set; }
         public string classDistribution { get; set; }
         public string staffID { get; set; }
@@ -23,7 +23,7 @@ namespace CHH_PJT2
         public int lessonAmount { get; set; }
         public string NsReport { get; set; }
 
-        public SetClassText(int lessonCode, string lessonName, string classDistribution, string staffID, DateTime lessonStartDate, DateTime lessonEndDate, DateTime lessonStartTime, DateTime lessonEndTime, int lessonAmount, string NsReport)
+        public SetClassText(string lessonCode, string lessonName, string classDistribution, string staffID, DateTime lessonStartDate, DateTime lessonEndDate, DateTime lessonStartTime, DateTime lessonEndTime, int lessonAmount, string NsReport)
         {
             this.lessonCode = lessonCode;
             this.lessonName = lessonName;
@@ -78,7 +78,7 @@ namespace CHH_PJT2
                                 @lessonEndDate, @lessonStartTime, @lessonEndTime, @lessonAmount, @lessonNsReport);";
             cmd.Connection = conn;
 
-            cmd.Parameters.Add("@lessonCode", MySqlDbType.Int32);
+            cmd.Parameters.Add("@lessonCode", MySqlDbType.VarChar);
             cmd.Parameters["@lessonCode"].Value = st.lessonCode;
 
             cmd.Parameters.Add("@lessonName", MySqlDbType.VarChar);
@@ -155,7 +155,7 @@ namespace CHH_PJT2
             cmd.Parameters.Add("@lessonNsReport", MySqlDbType.Text);
             cmd.Parameters["@lessonNsReport"].Value = st.NsReport;
 
-            cmd.Parameters.Add("@lessonCode", MySqlDbType.Int32);
+            cmd.Parameters.Add("@lessonCode", MySqlDbType.VarChar);
             cmd.Parameters["@lessonCode"].Value = st.lessonCode;
 
             int rows = cmd.ExecuteNonQuery();
@@ -175,7 +175,7 @@ namespace CHH_PJT2
             cmd.CommandText = @"delete from class where lessonCode = @lessonCode;";
             cmd.Connection = conn;
 
-            cmd.Parameters.Add("@lessonCode", MySqlDbType.Int32);
+            cmd.Parameters.Add("@lessonCode", MySqlDbType.VarChar);
             cmd.Parameters["@lessonCode"].Value = st.lessonCode;
 
             int rows = cmd.ExecuteNonQuery();
