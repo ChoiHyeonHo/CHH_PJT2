@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CHH_PJT2.DB;
 using MetroFramework.Forms;
 
 namespace CHH_PJT2
@@ -76,11 +77,11 @@ namespace CHH_PJT2
             }
             return frmCounseling;
         }
-        public static frmBoard CreateBoardForm()
+        public static frmBoard CreateBoardForm(Info info)
         {
             if (frmBoard == null)
             {
-                frmBoard = new frmBoard();
+                frmBoard = new frmBoard(info);
             }
             return frmBoard;
         }
@@ -94,6 +95,9 @@ namespace CHH_PJT2
             splitContainer1.Panel2.Controls.Add(frmHome);
             frmHome.Dock = DockStyle.Fill;
             frmHome.Show();
+
+            GetStaffID getStaffID = new GetStaffID();
+            getStaffID.staffID = lblId.Text;
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -148,7 +152,9 @@ namespace CHH_PJT2
 
         private void btnBoard_Click(object sender, EventArgs e)
         {
-            CreateBoardForm();
+            Info info = new Info();
+            info.staffID = lblId.Text;
+            CreateBoardForm(info);
             frmBoard.TopLevel = false;
             splitContainer1.Panel2.Controls.Clear();
             splitContainer1.Panel2.Controls.Add(frmBoard);

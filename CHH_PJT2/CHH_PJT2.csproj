@@ -60,8 +60,10 @@
   <ItemGroup>
     <Compile Include="AttendanceInfo.cs" />
     <Compile Include="DB\AttendanceDB.cs" />
+    <Compile Include="DB\BoardDB.cs" />
     <Compile Include="DB\ClassDB.cs" />
     <Compile Include="DB\CounselingDB.cs" />
+    <Compile Include="HomeDB.cs" />
     <Compile Include="Util\CommonUtil.cs" />
     <Compile Include="Form\LogInDB.cs" />
     <Compile Include="Form\frmAttendance.cs">
