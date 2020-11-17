@@ -34,7 +34,7 @@ namespace CHH_PJT2
         public DataTable GetAttendance()
         {
             DataTable dt1 = new DataTable();
-            string att = $@"select count(stuID), absence from attendance where absence = 'Y' and attendanceDate = '{DateTime.Today}';"; // 출석
+            string att = $@"select count(stuID), absence from attendance where absence = 'Y' and attendanceDate = '{DateTime.Today.ToString("yyyy-MM-dd")}';"; // 출석
             MySqlDataAdapter da1 = new MySqlDataAdapter(att, conn);
             da1.Fill(dt1);
 
@@ -44,7 +44,7 @@ namespace CHH_PJT2
         public DataTable GetAbsence()
         {
             DataTable dt2 = new DataTable();
-            string abs = $@"select count(stuID) from attendance where absence = 'Y' and attendanceDate = '{DateTime.Today}';"; // 결석
+            string abs = $@"select count(stuID), absence from attendance where absence = 'N' and attendanceDate = '{DateTime.Today.ToString("yyyy-MM-dd")}';"; // 출석
             MySqlDataAdapter da2 = new MySqlDataAdapter(abs, conn);
             da2.Fill(dt2);
 

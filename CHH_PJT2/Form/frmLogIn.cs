@@ -24,6 +24,7 @@ namespace CHH_PJT2
         private void Form1_Load(object sender, EventArgs e)
         {
             txtID.Focus();
+            //this.Activate();
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)

@@ -48,10 +48,16 @@ namespace CHH_PJT2
         {
             HomeDB db = new HomeDB();
             DataTable dt = db.GetAttendance();
+            DataTable dt2 = db.GetAbsence();
             db.Dispose();
 
             DataView dv = new DataView(dt);
-            chart2.Series[0].Points.DataBind(dv, "count(stuID)", "absence", "ToolTip=stu");
+            DataView dv2 = new DataView(dt2);
+            chart2.Series[0].Points.DataBind(dv, "absence", "count(stuID)", "ToolTip=count(stuID)");
+            chart2.Series[1].Points.DataBind(dv2, "absence", "count(stuID)", "ToolTip=count(stuID)");
+            chart2.Series[0].ChartType = SeriesChartType.Line;
+            chart2.Series[1].ChartType = SeriesChartType.Line;
+            //chart2.ChartAreas[0].AxisX.AxisName
         }
     }
 }
