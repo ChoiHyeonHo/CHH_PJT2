@@ -20,19 +20,35 @@ namespace CHH_PJT2
 
         }
 
-        public List<int> GetGraphChart()
+        public DataTable GetRegDate(string cbo)
         {
-            List<int> usercount = new List<int>();
-            
-            for (int i = 1; i < 13; i++)
-            {
-                string sql = $"select count(stuID) as 등록수 from student where month(regDate) = '{i}'";
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(sql, conn);
-                da.Fill(dt);
-                usercount.Add(Convert.ToInt32(dt.Rows[0][0]));
-            }
-            return usercount;
+            DataTable dt = new DataTable();
+            string sql = $@"select month(regDate) mm, ifnull(count(stuID), '0') as stu
+                                    from student where year(regDate) = {cbo}
+                                    group by month(regDate);";
+            MySqlDataAdapter da = new MySqlDataAdapter(sql, conn);
+            da.Fill(dt);
+            return dt;
+        }
+
+        public DataTable GetAttendance()
+        {
+            DataTable dt1 = new DataTable();
+            string att = $@"select count(stuID), absence from attendance where absence = 'Y' and attendanceDate = '{DateTime.Today}';"; // 출석
+            MySqlDataAdapter da1 = new MySqlDataAdapter(att, conn);
+            da1.Fill(dt1);
+
+            return dt1;
+        }
+
+        public DataTable GetAbsence()
+        {
+            DataTable dt2 = new DataTable();
+            string abs = $@"select count(stuID) from attendance where absence = 'Y' and attendanceDate = '{DateTime.Today}';"; // 결석
+            MySqlDataAdapter da2 = new MySqlDataAdapter(abs, conn);
+            da2.Fill(dt2);
+
+            return dt2;
         }
 
         public void Dispose()

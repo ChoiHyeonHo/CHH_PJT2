@@ -22,9 +22,36 @@ namespace CHH_PJT2
 
         private void frmHome_Load(object sender, EventArgs e)
         {
+            SetRegDate();
+            SetAtt();
+            //chart2.Series[0].Points.AddXY("출석", 10);
+            //chart2.Series[0].Points.AddXY("결석", 5);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SetRegDate();
+        }
+
+        private void SetRegDate()
+        {
             HomeDB db = new HomeDB();
-            List<int> month = new List<int>();
-            month = db.GetGraphChart();
+            DataTable dt = db.GetRegDate(cboYear.Text);
+            db.Dispose();
+
+            DataView dv = new DataView(dt);
+            chart1.Series[0].Points.DataBind(dv, "mm", "stu", "ToolTip=stu");
+            chart1.Series[0].ChartType = SeriesChartType.Column;
+        }
+
+        private void SetAtt()
+        {
+            HomeDB db = new HomeDB();
+            DataTable dt = db.GetAttendance();
+            db.Dispose();
+
+            DataView dv = new DataView(dt);
+            chart2.Series[0].Points.DataBind(dv, "count(stuID)", "absence", "ToolTip=stu");
         }
     }
 }
