@@ -35,8 +35,6 @@ namespace CHH_PJT2
             return usercount;
         }
 
-        //aaaaaaaaaa
-
         public void Dispose()
         {
             conn.Close();
