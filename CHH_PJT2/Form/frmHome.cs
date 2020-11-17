@@ -22,7 +22,9 @@ namespace CHH_PJT2
 
         private void frmHome_Load(object sender, EventArgs e)
         {
-          
+            HomeDB db = new HomeDB();
+            List<int> month = new List<int>();
+            month = db.GetGraphChart();
         }
     }
 }
