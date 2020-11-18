@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnBoard = new MetroFramework.Controls.MetroButton();
             this.btnCounseling = new MetroFramework.Controls.MetroButton();
@@ -41,6 +42,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblJob = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblDay = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -60,7 +65,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.btnClass);
             this.splitContainer1.Panel1.Controls.Add(this.btnMember);
             this.splitContainer1.Panel1.Controls.Add(this.btnHome);
-            this.splitContainer1.Size = new System.Drawing.Size(1000, 640);
+            this.splitContainer1.Size = new System.Drawing.Size(1000, 639);
             this.splitContainer1.SplitterDistance = 139;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -143,20 +148,20 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblName.Location = new System.Drawing.Point(109, 33);
+            this.lblName.Font = new System.Drawing.Font("Yu Gothic UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(112, 29);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(88, 19);
+            this.lblName.Size = new System.Drawing.Size(103, 25);
             this.lblName.TabIndex = 2;
             this.lblName.Text = "staffName";
             // 
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblId.Location = new System.Drawing.Point(275, 33);
+            this.lblId.Font = new System.Drawing.Font("Yu Gothic UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.Location = new System.Drawing.Point(278, 29);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(59, 19);
+            this.lblId.Size = new System.Drawing.Size(71, 25);
             this.lblId.TabIndex = 4;
             this.lblId.Text = "staffID";
             // 
@@ -173,10 +178,10 @@
             // lblJob
             // 
             this.lblJob.AutoSize = true;
-            this.lblJob.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblJob.Location = new System.Drawing.Point(459, 33);
+            this.lblJob.Font = new System.Drawing.Font("Yu Gothic UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJob.Location = new System.Drawing.Point(462, 29);
             this.lblJob.Name = "lblJob";
-            this.lblJob.Size = new System.Drawing.Size(100, 19);
+            this.lblJob.Size = new System.Drawing.Size(119, 25);
             this.lblJob.TabIndex = 6;
             this.lblJob.Text = "jobClassfyID";
             // 
@@ -190,11 +195,51 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "업무 형태: ";
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel1.Location = new System.Drawing.Point(587, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(5, 30);
+            this.panel1.TabIndex = 0;
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTime.Font = new System.Drawing.Font("Yu Gothic UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(714, 30);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(94, 25);
+            this.lblTime.TabIndex = 7;
+            this.lblTime.Text = "hh:mm:ss";
+            // 
+            // lblDay
+            // 
+            this.lblDay.AutoSize = true;
+            this.lblDay.BackColor = System.Drawing.Color.Transparent;
+            this.lblDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblDay.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblDay.Location = new System.Drawing.Point(598, 33);
+            this.lblDay.Name = "lblDay";
+            this.lblDay.Size = new System.Drawing.Size(101, 19);
+            this.lblDay.TabIndex = 8;
+            this.lblDay.Text = "yyyy-MM-dd";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 700);
+            this.ClientSize = new System.Drawing.Size(1000, 699);
+            this.Controls.Add(this.lblTime);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblDay);
             this.Controls.Add(this.lblJob);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblId);
@@ -228,5 +273,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblJob;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label lblDay;
     }
 }

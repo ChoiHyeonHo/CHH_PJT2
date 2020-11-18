@@ -87,6 +87,7 @@ namespace CHH_PJT2
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
+            timer1.Start();
             lblId.Text = UserInfo.ID;
             lblName.Text = UserInfo.Name;
             lblJob.Text = UserInfo.JobClassifyID.ToString();
@@ -160,6 +161,14 @@ namespace CHH_PJT2
             splitContainer1.Panel2.Controls.Add(frmBoard);
             frmBoard.Dock = DockStyle.Fill;
             frmBoard.Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime curTime = DateTime.Now;
+
+            lblDay.Text = DateTime.Now.ToShortDateString();
+            lblTime.Text = DateTime.Now.ToLongTimeString();
         }
     }
 }

@@ -24,13 +24,17 @@ namespace CHH_PJT2
         {
             SetRegDate();
             SetAtt();
-            //chart2.Series[0].Points.AddXY("출석", 10);
-            //chart2.Series[0].Points.AddXY("결석", 5);
+            progressBar();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             SetRegDate();
+        }
+
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            progressBar();
         }
 
         private void SetRegDate()
@@ -42,6 +46,7 @@ namespace CHH_PJT2
             DataView dv = new DataView(dt);
             chart1.Series[0].Points.DataBind(dv, "mm", "stu", "ToolTip=stu");
             chart1.Series[0].ChartType = SeriesChartType.Column;
+            chart1.Series[0].Name = "등록 학생수";
         }
 
         private void SetAtt()
@@ -55,9 +60,17 @@ namespace CHH_PJT2
             DataView dv2 = new DataView(dt2);
             chart2.Series[0].Points.DataBind(dv, "absence", "count(stuID)", "ToolTip=count(stuID)");
             chart2.Series[1].Points.DataBind(dv2, "absence", "count(stuID)", "ToolTip=count(stuID)");
-            chart2.Series[0].ChartType = SeriesChartType.Line;
-            chart2.Series[1].ChartType = SeriesChartType.Line;
-            //chart2.ChartAreas[0].AxisX.AxisName
+            chart2.Series[0].ChartType = SeriesChartType.Column;
+            chart2.Series[1].ChartType = SeriesChartType.Column;
+        }
+
+        private void progressBar()
+        {
+            HomeDB db = new HomeDB();
+            info info = db.SetProgressBarValue();
+            db.Dispose();
+            circularProgressBar1.Value = info.Att;
+            circularProgressBar1.Maximum = info.AllStu;
         }
     }
 }

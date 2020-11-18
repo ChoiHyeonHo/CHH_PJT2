@@ -9,6 +9,11 @@ using System.Data;
 
 namespace CHH_PJT2
 {
+    public class info
+    {
+        public int Att { get; set; }
+        public int AllStu { get; set; }
+    }
     public class HomeDB : IDisposable
     {
         MySqlConnection conn;
@@ -17,7 +22,6 @@ namespace CHH_PJT2
             conn = new MySqlConnection();
             conn.ConnectionString = ConfigurationManager.ConnectionStrings["Academy"].ConnectionString;
             conn.Open();
-
         }
 
         public DataTable GetRegDate(string cbo)
@@ -39,6 +43,42 @@ namespace CHH_PJT2
             da1.Fill(dt1);
 
             return dt1;
+        }
+        public info SetProgressBarValue()
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = $@"select count(stuID) as att, 
+                                                            (select count(stuID) 
+                                                            from attendance A1 
+                                                            where A1.attendanceDate=A2.attendanceDate) allstu 
+                                                        from attendance A2 where absence = 'Y' and attendanceDate = '{DateTime.Today.ToString("yyyy-MM-dd")}';";
+            cmd.Connection = conn;
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                info info = new info();
+                info.Att = Convert.ToInt32(reader["att"].ToString());
+                info.AllStu = Convert.ToInt32(reader["allstu"].ToString());
+                return info;
+            }
+            else
+                return null;
+        }
+
+        public info SetProgressBarMax()
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = $@"select count(stuID) from attendance where attendanceDate = '{DateTime.Today.ToString("yyyy-MM-dd")}';";
+            cmd.Connection = conn;
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                info info = new info();
+                info.AllStu = Convert.ToInt32(reader["count(stuID)"].ToString());
+                return info;
+            }
+            else
+                return null;
         }
 
         public DataTable GetAbsence()

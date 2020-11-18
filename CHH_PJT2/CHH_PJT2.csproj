@@ -59,11 +59,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttendanceInfo.cs" />
+    <Compile Include="CircularProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DB\AttendanceDB.cs" />
     <Compile Include="DB\BoardDB.cs" />
     <Compile Include="DB\ClassDB.cs" />
     <Compile Include="DB\CounselingDB.cs" />
     <Compile Include="HomeDB.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Util\CommonUtil.cs" />
     <Compile Include="Form\LogInDB.cs" />
     <Compile Include="Form\frmAttendance.cs">
@@ -178,14 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Form\frmSearchID.resx">
       <DependentUpon>frmSearchID.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +246,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-refresh-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
