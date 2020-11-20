@@ -219,11 +219,26 @@ namespace CHH_PJT2
         /// <param name="e"></param>
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            txtLessonName.Text = txtLessonCode.Text = txtStaffID.Text = txtAmount.Text = txtNsReport.Text = "";
-            dtpStartDate.Value = dtpEndDate.Value = dtpStartTime.Value = dtpEndTime.Value = DateTime.Now;
-            cbClass.Text = null;
+            try
+            {
+                txtLessonName.Text = txtLessonCode.Text = txtStaffID.Text = txtAmount.Text = txtNsReport.Text = "";
+                dtpStartDate.Value = dtpEndDate.Value = dtpStartTime.Value = dtpEndTime.Value = DateTime.Now;
+                cbClass.Text = null;
+            }
+            catch (Exception err)
+            {
+                throw err;
+            }
+            
         }
 
+        /// <summary>
+        /// 새로고침 버튼 클릭 이벤트
+        /// 1. ComboBox1 의 내용을 담아서 DB의 LoadClass() 수행
+        /// 2. ComboBox1의 내용을 쿼리문 where절에 담아서 정보 다시 출력
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRenew_Click(object sender, EventArgs e)
         {
             ClassDB db = new ClassDB();
