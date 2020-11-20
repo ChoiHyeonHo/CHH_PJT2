@@ -58,21 +58,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AttendanceInfo.cs" />
-    <Compile Include="CircularProgressBar.cs">
+    <Compile Include="Util\참고 CS\AttendanceInfo.cs" />
+    <Compile Include="Util\참고 CS\CircularProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DB\AttendanceDB.cs" />
     <Compile Include="DB\BoardDB.cs" />
     <Compile Include="DB\ClassDB.cs" />
     <Compile Include="DB\CounselingDB.cs" />
-    <Compile Include="HomeDB.cs" />
+    <Compile Include="DB\HomeDB.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Util\CommonUtil.cs" />
+    <Compile Include="Util\Util\CommonUtil.cs" />
     <Compile Include="Form\LogInDB.cs" />
     <Compile Include="Form\frmAttendance.cs">
       <SubType>Form</SubType>
@@ -135,10 +135,10 @@
     <Compile Include="Form\frmMembership.Designer.cs">
       <DependentUpon>frmMembership.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDetAttendance.cs">
+    <Compile Include="Form\frmDetAttendance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDetAttendance.Designer.cs">
+    <Compile Include="Form\frmDetAttendance.Designer.cs">
       <DependentUpon>frmDetAttendance.cs</DependentUpon>
     </Compile>
     <Compile Include="DB\LogInDB.cs" />
@@ -181,7 +181,7 @@
     <EmbeddedResource Include="Form\frmMembership.resx">
       <DependentUpon>frmMembership.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDetAttendance.resx">
+    <EmbeddedResource Include="Form\frmDetAttendance.resx">
       <DependentUpon>frmDetAttendance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

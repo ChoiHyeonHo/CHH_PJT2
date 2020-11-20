@@ -46,7 +46,7 @@ namespace CHH_PJT2
             conn.Open();
         }
 
-        public DataTable LoadMemberData()
+        public DataTable LoadClassData()
         {
             DataTable dt = new DataTable();
             string sql = @"select lessonCode, lessonName, classDistribution, staffID, lessonStartDate, lessonEndDate, 
