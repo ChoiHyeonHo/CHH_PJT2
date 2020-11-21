@@ -9,6 +9,7 @@ using System.Data;
 
 namespace CHH_PJT2
 {
+
     /// <summary>
     /// 1.  출석번호, 학생ID, 입/퇴실 시간, 지각, 결석, 조퇴여부, 출석일, 기록사항, 학생이름, 수강코드에 대한 Property
     ///2. 각 Property에 대한 초기값 설정
@@ -27,6 +28,10 @@ namespace CHH_PJT2
         public string stuName { get; set; }
         public string lessonCode { get; set; }
 
+        public SetAttendanceText()
+        {
+
+        }
         /// <summary>
         /// DetAttendance폼의 출석이미지 클릭을 위함
         /// </summary>

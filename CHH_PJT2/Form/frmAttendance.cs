@@ -272,14 +272,37 @@ namespace CHH_PJT2
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private List<string> button1_Click(object sender, EventArgs e)
         {
+            List<SetAttendanceText> t = new List<SetAttendanceText>();
             List<DataGridViewRow> rowCollection = new List<DataGridViewRow>();
 
             foreach (DataGridViewCell cell in AttDataGridView.SelectedCells)
             {
                 rowCollection.Add(AttDataGridView.Rows[cell.RowIndex]);
             }
+            if (AttDataGridView.SelectedRows.Count > 0)
+            {
+                for(int i=0; i<AttDataGridView.Rows.Count; i++)
+                {
+                    if(Convert.ToBoolean(AttDataGridView["chk",i].Value) == true)
+                    {
+                        SetAttendanceText temp = new SetAttendanceText();
+                        temp.stuID = AttDataGridView["stuID", i].Value.ToString();
+                        temp.attendanceNum = int.Parse(AttDataGridView["attendanceNum", i].Value.ToString());
+                        temp.enteringTime = Convert.ToDateTime(AttDataGridView["enteringTime", i].Value.ToString());
+                        temp.entranceTime = Convert.ToDateTime(AttDataGridView["entranceTime", i].Value.ToString());
+                        temp.lateness = Convert.ToChar(AttDataGridView["lateness", i].Value.ToString());
+                        temp.absence = Convert.ToChar(AttDataGridView["absence", i].Value.ToString());
+                        temp.early_Leave = Convert.ToChar(AttDataGridView["early_Leave", i].Value.ToString());
+                        temp.attendanceDate = Convert.ToDateTime(AttDataGridView["attendanceDate", i].Value.ToString());
+                        temp.recordContent = AttDataGridView["recordContent", i].Value.ToString();
+
+                        list.Add(temp.ToString());
+                    }
+                }
+            }
+            return list;
         }
 
         /// <summary>
