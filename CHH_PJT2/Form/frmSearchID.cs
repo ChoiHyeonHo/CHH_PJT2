@@ -19,25 +19,33 @@ namespace CHH_PJT2
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //유효성 검사
-            if (txtName.Text.Trim().Length < 1 || txtphNum.Text.Trim().Length < 1 || dtpBirth.Value > DateTime.Now || cbJob.SelectedIndex == 0)
+            try
             {
-                MessageBox.Show("제대로 된 정보 입력이 아닙니다.");
-            }
-            LogInDB db = new LogInDB();
-            //입력 정보가 적합한지 체크
-            int result = db.SearchID(txtName.Text, txtphNum.Text, dtpBirth.Value, cbJob.Text);
-            db.Dispose();
+                //유효성 검사
+                if (txtName.Text.Trim().Length < 1 || txtphNum.Text.Trim().Length < 1 || dtpBirth.Value > DateTime.Now || cbJob.SelectedIndex == 0)
+                {
+                    MessageBox.Show("제대로 된 정보 입력이 아닙니다.");
+                }
+                LogInDB db = new LogInDB();
+                //입력 정보가 적합한지 체크
+                int result = db.SearchID(txtName.Text, txtphNum.Text, dtpBirth.Value, cbJob.Text);
+                //db.Dispose();
 
-            if (result < 1)
-            {
-                MessageBox.Show("회원 정보를 찾을 수 없습니다.");
-                return;
+                if (result < 1)
+                {
+                    MessageBox.Show("회원 정보를 찾을 수 없습니다.");
+                    return;
+                }
+                else
+                {
+                    lblResult.Text = db.ResultID(txtName.Text, txtphNum.Text, dtpBirth.Value, cbJob.Text);
+                }
             }
-            else
+            catch (Exception err)
             {
-                lblResult.Text = db.ResultID(txtName.Text, txtphNum.Text, dtpBirth.Value, cbJob.Text);
+                MessageBox.Show(err.Message);
             }
+            
         }
 
         private void frmSearchID_Load(object sender, EventArgs e)

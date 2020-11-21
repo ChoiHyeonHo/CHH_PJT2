@@ -47,12 +47,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtLessonCode = new System.Windows.Forms.TextBox();
             this.AttDataGridView = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.출결변경ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.출석변경ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.결석변경ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.기타사항ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnRenew = new System.Windows.Forms.Button();
+            this.출결변경ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.결석변경ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.기타사항ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AttDataGridView)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -263,44 +262,6 @@
             this.AttDataGridView.TabIndex = 66;
             this.AttDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AttDataGridView_CellDoubleClick);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.출결변경ToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(127, 26);
-            // 
-            // 출결변경ToolStripMenuItem
-            // 
-            this.출결변경ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.출석변경ToolStripMenuItem,
-            this.결석변경ToolStripMenuItem,
-            this.기타사항ToolStripMenuItem});
-            this.출결변경ToolStripMenuItem.Name = "출결변경ToolStripMenuItem";
-            this.출결변경ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
-            this.출결변경ToolStripMenuItem.Text = "출석 설정";
-            // 
-            // 출석변경ToolStripMenuItem
-            // 
-            this.출석변경ToolStripMenuItem.Name = "출석변경ToolStripMenuItem";
-            this.출석변경ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.출석변경ToolStripMenuItem.Text = "출석변경";
-            this.출석변경ToolStripMenuItem.Click += new System.EventHandler(this.출결변경ToolStripMenuItem_Click_1);
-            // 
-            // 결석변경ToolStripMenuItem
-            // 
-            this.결석변경ToolStripMenuItem.Name = "결석변경ToolStripMenuItem";
-            this.결석변경ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.결석변경ToolStripMenuItem.Text = "결석변경";
-            this.결석변경ToolStripMenuItem.Click += new System.EventHandler(this.결석변경ToolStripMenuItem_Click);
-            // 
-            // 기타사항ToolStripMenuItem
-            // 
-            this.기타사항ToolStripMenuItem.Name = "기타사항ToolStripMenuItem";
-            this.기타사항ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.기타사항ToolStripMenuItem.Text = "기타사항";
-            this.기타사항ToolStripMenuItem.Click += new System.EventHandler(this.기타사항ToolStripMenuItem_Click);
-            // 
             // btnRenew
             // 
             this.btnRenew.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -312,6 +273,36 @@
             this.btnRenew.Text = "새로고침";
             this.btnRenew.UseVisualStyleBackColor = true;
             this.btnRenew.Click += new System.EventHandler(this.btnRenew_Click);
+            // 
+            // 출결변경ToolStripMenuItem
+            // 
+            this.출결변경ToolStripMenuItem.Name = "출결변경ToolStripMenuItem";
+            this.출결변경ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.출결변경ToolStripMenuItem.Text = "출석 변경";
+            this.출결변경ToolStripMenuItem.Click += new System.EventHandler(this.출결변경ToolStripMenuItem_Click_1);
+            // 
+            // 결석변경ToolStripMenuItem1
+            // 
+            this.결석변경ToolStripMenuItem1.Name = "결석변경ToolStripMenuItem1";
+            this.결석변경ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.결석변경ToolStripMenuItem1.Text = "결석 변경";
+            this.결석변경ToolStripMenuItem1.Click += new System.EventHandler(this.결석변경ToolStripMenuItem_Click);
+            // 
+            // 기타사항ToolStripMenuItem1
+            // 
+            this.기타사항ToolStripMenuItem1.Name = "기타사항ToolStripMenuItem1";
+            this.기타사항ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.기타사항ToolStripMenuItem1.Text = "기타사항";
+            this.기타사항ToolStripMenuItem1.Click += new System.EventHandler(this.기타사항ToolStripMenuItem_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.출결변경ToolStripMenuItem,
+            this.결석변경ToolStripMenuItem1,
+            this.기타사항ToolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
             // 
             // frmAttendance
             // 
@@ -357,8 +348,7 @@
         private System.Windows.Forms.Button btnRenew;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 출결변경ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 출석변경ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 결석변경ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 기타사항ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 결석변경ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 기타사항ToolStripMenuItem1;
     }
 }

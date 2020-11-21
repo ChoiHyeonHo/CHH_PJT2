@@ -13,6 +13,7 @@ namespace CHH_PJT2
     public partial class frmAttendance : Form
     {
         CheckBox headerCheckBox = new CheckBox();
+        List<string> list = new List<string>();
 
         public class setdata
         {
@@ -273,7 +274,12 @@ namespace CHH_PJT2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //??
+            List<DataGridViewRow> rowCollection = new List<DataGridViewRow>();
+
+            foreach (DataGridViewCell cell in AttDataGridView.SelectedCells)
+            {
+                rowCollection.Add(AttDataGridView.Rows[cell.RowIndex]);
+            }
         }
 
         /// <summary>

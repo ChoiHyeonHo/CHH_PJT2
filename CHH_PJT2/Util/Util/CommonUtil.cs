@@ -19,17 +19,18 @@ namespace CHH_PJT2
 
         public static void AddGridTextColumn( 
                            DataGridView dgv, 
-                           string headertext,
+                           string headerText,
                            string dataPropertyName,
                            int colWidth = 100,
                            bool visibility = true,
-                           DataGridViewContentAlignment textalien = DataGridViewContentAlignment.MiddleLeft)
+                           DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft)
         {
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
-            col.HeaderText = headertext;
+            col.Name = dataPropertyName;
+            col.HeaderText = headerText;
             col.DataPropertyName = dataPropertyName;
             col.Width = colWidth;
-            col.DefaultCellStyle.Alignment = textalien;
+            col.DefaultCellStyle.Alignment = textAlign;
             col.Visible = visibility;
             col.ReadOnly = true;
             dgv.Columns.Add(col);

@@ -21,7 +21,7 @@ namespace CHH_PJT2
         {
             LogInDB db = new LogInDB();
             int result = db.CheckPwd(txtName.Text, txtphNum.Text, txtID.Text, cbJob.Text);
-            db.Dispose();
+            //db.Dispose();
 
             if (result < 1)
             {

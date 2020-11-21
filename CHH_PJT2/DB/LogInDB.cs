@@ -19,6 +19,7 @@ namespace CHH_PJT2
         public DateTime birth { get; set; }
         public string JobClassifyID { get; set; }
         public string pwd { get; set; }
+
     }
 
     public class LogInDB : IDisposable
@@ -35,7 +36,7 @@ namespace CHH_PJT2
         public LogIn LogIn(string staffid, string pwd)
         {
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = @"select staffID, staffName, phNum, address, birth, 
+            cmd.CommandText = @"select staffID, staffName, phNum, postalCode, birth, 
                                 jobClassifyID, staffPwd from staff 
                                 where staffID = @staffID and staffPwd = @staffPwd;";
             cmd.Connection = conn;
@@ -63,7 +64,7 @@ namespace CHH_PJT2
         }
 
         //ID 유효한지 체크
-        public int SearchID(string name, string phNum, DateTime birth, string jobclassify)
+        public int SearchID(string Name, string phNum, DateTime Birth, string job)
         {
             MySqlCommand cmd = new MySqlCommand();
             cmd.CommandText = @"select count(*) from staff where staffName = @staffName and 
@@ -71,16 +72,16 @@ namespace CHH_PJT2
             cmd.Connection = conn;
 
             cmd.Parameters.Add("@staffName", MySqlDbType.VarChar);
-            cmd.Parameters["@staffName"].Value = name;
+            cmd.Parameters["@staffName"].Value = Name;
 
             cmd.Parameters.Add("@phNum", MySqlDbType.VarChar);
             cmd.Parameters["@phNum"].Value = phNum;
 
             cmd.Parameters.Add("@birth", MySqlDbType.Date);
-            cmd.Parameters["@birth"].Value = birth;
+            cmd.Parameters["@birth"].Value = Birth.ToString("yyyy-MM-dd");
 
             cmd.Parameters.Add("@jobClassifyID", MySqlDbType.VarChar);
-            cmd.Parameters["@jobClassifyID"].Value = jobclassify;
+            cmd.Parameters["@jobClassifyID"].Value = job;
 
             return Convert.ToInt32(cmd.ExecuteScalar());
         }
@@ -93,6 +94,7 @@ namespace CHH_PJT2
                                 and staffID = @staffID and  phNum = @phNum and jobClassifyID = @jobClassifyID;";
             cmd.Connection = conn;
 
+            LogIn logIn = new LogIn();
             cmd.Parameters.Add("@staffName", MySqlDbType.VarChar);
             cmd.Parameters["@staffName"].Value = Name;
 
@@ -111,26 +113,35 @@ namespace CHH_PJT2
         //ID 찾은 결과 반환
         public string ResultID(string Name, string phNum, DateTime birth, string Classify)
         {
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = @"select staffID from staff where staffName = @staffName 
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = @"select staffID from staff where staffName = @staffName 
                                 and phNum = @phNum and birth = @birth and jobClassifyID = @jobClassifyID;";
-            cmd.Connection = conn;
+                cmd.Connection = conn;
 
-            cmd.Parameters.Add("@staffName", MySqlDbType.VarChar);
-            cmd.Parameters["@staffName"].Value = Name;
+                cmd.Parameters.Add("@staffName", MySqlDbType.VarChar);
+                cmd.Parameters["@staffName"].Value = Name;
 
-            cmd.Parameters.Add("@phNum", MySqlDbType.VarChar);
-            cmd.Parameters["@phNum"].Value = phNum;
+                cmd.Parameters.Add("@phNum", MySqlDbType.VarChar);
+                cmd.Parameters["@phNum"].Value = phNum;
 
-            cmd.Parameters.Add("@birth", MySqlDbType.Date);
-            cmd.Parameters["@birth"].Value = birth;
+                cmd.Parameters.Add("@birth", MySqlDbType.Date);
+                cmd.Parameters["@birth"].Value = birth.ToString("yyyy-MM-dd");
 
-            cmd.Parameters.Add("@jobClassifyID", MySqlDbType.VarChar);
-            cmd.Parameters["@jobClassifyID"].Value = Classify;
+                cmd.Parameters.Add("@jobClassifyID", MySqlDbType.VarChar);
+                cmd.Parameters["@jobClassifyID"].Value = Classify;
 
-            string uid = (string)cmd.ExecuteScalar();
+                string uid = (string)cmd.ExecuteScalar();
 
-            return uid;
+                return uid;
+            }
+            catch (Exception err)
+            {
+
+                throw err;
+            }
+            
         }
 
         //Pwd 변경

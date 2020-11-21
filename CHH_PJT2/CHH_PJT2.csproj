@@ -58,6 +58,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\frmSearchRoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmSearchRoad.Designer.cs">
+      <DependentUpon>frmSearchRoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB\MembershipDB.cs" />
     <Compile Include="Util\참고 CS\AttendanceInfo.cs" />
     <Compile Include="Util\참고 CS\CircularProgressBar.cs">
       <SubType>Component</SubType>
@@ -183,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmDetAttendance.resx">
       <DependentUpon>frmDetAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmSearchRoad.resx">
+      <DependentUpon>frmSearchRoad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
