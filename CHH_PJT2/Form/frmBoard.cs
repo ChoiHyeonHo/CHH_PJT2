@@ -188,26 +188,34 @@ namespace CHH_PJT2
         {
             try
             {
-                BoardDB db = new BoardDB();
-                SetBoardText st = new SetBoardText(int.Parse(lblBoardID.Text), txtBoardName.Text, txtBoardContent.Text, lblpostingDate.Text, lblStaffID.Text, lblcorrectDate.Text);
-                bool bFlag;
-                bFlag = db.DeleteBoard(st);
-
-                if (bFlag)
+                frmDelete frm = new frmDelete();
+                if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("정보 삭제가 완료되었습니다.");
-                    SetData();
+                    BoardDB db = new BoardDB();
+                    SetBoardText st = new SetBoardText(int.Parse(lblBoardID.Text), txtBoardName.Text, txtBoardContent.Text, lblpostingDate.Text, lblStaffID.Text, lblcorrectDate.Text);
+                    bool bFlag;
+                    bFlag = db.DeleteBoard(st);
+
+                    if (bFlag)
+                    {
+                        MessageBox.Show("정보 삭제가 완료되었습니다.");
+                        SetData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("형식을 잘못 입력하였거나 빈 항목이 있습니다.");
+                    }
+                    db.Dispose();
                 }
                 else
                 {
-                    MessageBox.Show("형식을 잘못 입력하였거나 빈 항목이 있습니다.");
+                    frm.Close();
                 }
-                db.Dispose();
             }
             catch (Exception err)
             {
                 MessageBox.Show(err.Message);
-            }
+            } 
         }
 
         /// <summary>

@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.button3 = new System.Windows.Forms.Button();
             this.dtpAttendanceDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
@@ -43,46 +42,34 @@
             this.txtEntranceTime = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtLessonCode = new System.Windows.Forms.TextBox();
             this.AttDataGridView = new System.Windows.Forms.DataGridView();
-            this.btnRenew = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.출결변경ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.결석변경ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.기타사항ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnRenew = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AttDataGridView)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.SeaShell;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.Location = new System.Drawing.Point(700, 14);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(98, 99);
-            this.button3.TabIndex = 60;
-            this.button3.Text = "퇴실";
-            this.button3.UseVisualStyleBackColor = false;
             // 
             // dtpAttendanceDate
             // 
             this.dtpAttendanceDate.Enabled = false;
             this.dtpAttendanceDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpAttendanceDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpAttendanceDate.Location = new System.Drawing.Point(58, 85);
+            this.dtpAttendanceDate.Location = new System.Drawing.Point(366, 22);
             this.dtpAttendanceDate.Name = "dtpAttendanceDate";
-            this.dtpAttendanceDate.Size = new System.Drawing.Size(182, 21);
+            this.dtpAttendanceDate.Size = new System.Drawing.Size(163, 21);
             this.dtpAttendanceDate.TabIndex = 59;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(18, 25);
+            this.label1.Location = new System.Drawing.Point(54, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(25, 15);
             this.label1.TabIndex = 57;
@@ -93,10 +80,10 @@
             this.txtID.BackColor = System.Drawing.Color.White;
             this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtID.Location = new System.Drawing.Point(58, 21);
+            this.txtID.Location = new System.Drawing.Point(94, 23);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(182, 21);
+            this.txtID.Size = new System.Drawing.Size(189, 21);
             this.txtID.TabIndex = 56;
             // 
             // txtEnteringTime
@@ -104,10 +91,10 @@
             this.txtEnteringTime.BackColor = System.Drawing.Color.White;
             this.txtEnteringTime.Enabled = false;
             this.txtEnteringTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtEnteringTime.Location = new System.Drawing.Point(334, 54);
+            this.txtEnteringTime.Location = new System.Drawing.Point(366, 55);
             this.txtEnteringTime.Name = "txtEnteringTime";
             this.txtEnteringTime.ReadOnly = true;
-            this.txtEnteringTime.Size = new System.Drawing.Size(182, 21);
+            this.txtEnteringTime.Size = new System.Drawing.Size(163, 21);
             this.txtEnteringTime.TabIndex = 49;
             // 
             // txtName
@@ -115,10 +102,10 @@
             this.txtName.BackColor = System.Drawing.Color.White;
             this.txtName.Enabled = false;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtName.Location = new System.Drawing.Point(58, 53);
+            this.txtName.Location = new System.Drawing.Point(94, 55);
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(182, 21);
+            this.txtName.Size = new System.Drawing.Size(189, 21);
             this.txtName.TabIndex = 47;
             // 
             // comboBox1
@@ -134,7 +121,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label10.Location = new System.Drawing.Point(18, 89);
+            this.label10.Location = new System.Drawing.Point(300, 26);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(37, 15);
             this.label10.TabIndex = 51;
@@ -144,7 +131,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(268, 57);
+            this.label7.Location = new System.Drawing.Point(300, 58);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 15);
             this.label7.TabIndex = 50;
@@ -154,7 +141,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(18, 57);
+            this.label6.Location = new System.Drawing.Point(54, 59);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 15);
             this.label6.TabIndex = 48;
@@ -165,7 +152,7 @@
             this.txtEntranceTime.BackColor = System.Drawing.Color.White;
             this.txtEntranceTime.Enabled = false;
             this.txtEntranceTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtEntranceTime.Location = new System.Drawing.Point(334, 86);
+            this.txtEntranceTime.Location = new System.Drawing.Point(607, 55);
             this.txtEntranceTime.Name = "txtEntranceTime";
             this.txtEntranceTime.ReadOnly = true;
             this.txtEntranceTime.Size = new System.Drawing.Size(182, 21);
@@ -175,7 +162,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(268, 89);
+            this.label2.Location = new System.Drawing.Point(541, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 15);
             this.label2.TabIndex = 62;
@@ -183,10 +170,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtLessonCode);
-            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.txtEntranceTime);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
@@ -198,31 +183,18 @@
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.txtEnteringTime);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox1.Location = new System.Drawing.Point(18, 503);
+            this.groupBox1.Location = new System.Drawing.Point(18, 554);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(804, 119);
+            this.groupBox1.Size = new System.Drawing.Size(811, 83);
             this.groupBox1.TabIndex = 63;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Infomation";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.AliceBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(580, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 99);
-            this.button1.TabIndex = 65;
-            this.button1.Text = "출석";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(268, 25);
+            this.label3.Location = new System.Drawing.Point(541, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 15);
             this.label3.TabIndex = 64;
@@ -233,7 +205,7 @@
             this.txtLessonCode.BackColor = System.Drawing.Color.White;
             this.txtLessonCode.Enabled = false;
             this.txtLessonCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtLessonCode.Location = new System.Drawing.Point(334, 22);
+            this.txtLessonCode.Location = new System.Drawing.Point(607, 23);
             this.txtLessonCode.Name = "txtLessonCode";
             this.txtLessonCode.ReadOnly = true;
             this.txtLessonCode.Size = new System.Drawing.Size(182, 21);
@@ -258,9 +230,40 @@
             this.AttDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.AttDataGridView.RowTemplate.Height = 23;
             this.AttDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.AttDataGridView.Size = new System.Drawing.Size(806, 448);
+            this.AttDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.AttDataGridView.Size = new System.Drawing.Size(811, 499);
             this.AttDataGridView.TabIndex = 66;
             this.AttDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AttDataGridView_CellDoubleClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.출결변경ToolStripMenuItem,
+            this.결석변경ToolStripMenuItem1,
+            this.기타사항ToolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(127, 70);
+            // 
+            // 출결변경ToolStripMenuItem
+            // 
+            this.출결변경ToolStripMenuItem.Name = "출결변경ToolStripMenuItem";
+            this.출결변경ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.출결변경ToolStripMenuItem.Text = "출석 변경";
+            this.출결변경ToolStripMenuItem.Click += new System.EventHandler(this.출결변경ToolStripMenuItem_Click_1);
+            // 
+            // 결석변경ToolStripMenuItem1
+            // 
+            this.결석변경ToolStripMenuItem1.Name = "결석변경ToolStripMenuItem1";
+            this.결석변경ToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
+            this.결석변경ToolStripMenuItem1.Text = "결석 변경";
+            this.결석변경ToolStripMenuItem1.Click += new System.EventHandler(this.결석변경ToolStripMenuItem_Click);
+            // 
+            // 기타사항ToolStripMenuItem1
+            // 
+            this.기타사항ToolStripMenuItem1.Name = "기타사항ToolStripMenuItem1";
+            this.기타사항ToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
+            this.기타사항ToolStripMenuItem1.Text = "기타사항";
+            this.기타사항ToolStripMenuItem1.Click += new System.EventHandler(this.기타사항ToolStripMenuItem_Click);
             // 
             // btnRenew
             // 
@@ -274,45 +277,15 @@
             this.btnRenew.UseVisualStyleBackColor = true;
             this.btnRenew.Click += new System.EventHandler(this.btnRenew_Click);
             // 
-            // 출결변경ToolStripMenuItem
-            // 
-            this.출결변경ToolStripMenuItem.Name = "출결변경ToolStripMenuItem";
-            this.출결변경ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.출결변경ToolStripMenuItem.Text = "출석 변경";
-            this.출결변경ToolStripMenuItem.Click += new System.EventHandler(this.출결변경ToolStripMenuItem_Click_1);
-            // 
-            // 결석변경ToolStripMenuItem1
-            // 
-            this.결석변경ToolStripMenuItem1.Name = "결석변경ToolStripMenuItem1";
-            this.결석변경ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.결석변경ToolStripMenuItem1.Text = "결석 변경";
-            this.결석변경ToolStripMenuItem1.Click += new System.EventHandler(this.결석변경ToolStripMenuItem_Click);
-            // 
-            // 기타사항ToolStripMenuItem1
-            // 
-            this.기타사항ToolStripMenuItem1.Name = "기타사항ToolStripMenuItem1";
-            this.기타사항ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.기타사항ToolStripMenuItem1.Text = "기타사항";
-            this.기타사항ToolStripMenuItem1.Click += new System.EventHandler(this.기타사항ToolStripMenuItem_Click);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.출결변경ToolStripMenuItem,
-            this.결석변경ToolStripMenuItem1,
-            this.기타사항ToolStripMenuItem1});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
-            // 
             // frmAttendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(841, 642);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnRenew);
             this.Controls.Add(this.AttDataGridView);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.comboBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAttendance";
@@ -327,8 +300,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DateTimePicker dtpAttendanceDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtID;
@@ -341,7 +312,6 @@
         private System.Windows.Forms.TextBox txtEntranceTime;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtLessonCode;
         private System.Windows.Forms.DataGridView AttDataGridView;

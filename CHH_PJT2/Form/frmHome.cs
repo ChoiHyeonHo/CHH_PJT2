@@ -27,17 +27,9 @@ namespace CHH_PJT2
         /// <param name="e"></param>
         private void frmHome_Load(object sender, EventArgs e)
         {
-            try
-            {
-                SetRegDate();
-                SetAtt();
-                progressBar();
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
-            
+            SetRegDate();
+            SetAtt();
+            progressBar();
         }
 
         /// <summary>
@@ -47,15 +39,7 @@ namespace CHH_PJT2
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                SetRegDate();
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
-            
+            SetRegDate();
         }
 
         /// <summary>
@@ -65,15 +49,7 @@ namespace CHH_PJT2
         /// <param name="e"></param>
         private void refresh_Click(object sender, EventArgs e)
         {
-            try
-            {
-                progressBar();
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
-            
+            progressBar();
         }
 
         /// <summary>
@@ -81,22 +57,15 @@ namespace CHH_PJT2
         /// </summary>
         private void SetRegDate()
         {
-            try
-            {
-                HomeDB db = new HomeDB();
-                DataTable dt = db.GetRegDate(cboYear.Text);
-                db.Dispose();
+            HomeDB db = new HomeDB();
+            DataTable dt = db.GetRegDate(cboYear.Text);
+            db.Dispose();
 
-                DataView dv = new DataView(dt);
-                chart1.Series[0].Points.DataBind(dv, "mm", "stu", "ToolTip=stu");
-                chart1.Series[0].ChartType = SeriesChartType.Column;
-                chart1.Series[0].Name = "등록 학생수";
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
-            
+            DataView dv = new DataView(dt);
+            chart1.Series[0].Points.DataBind(dv, "mm", "stu", "ToolTip=stu");
+            chart1.Series[0].ChartType = SeriesChartType.Column;
+            chart1.Series[0].Name = "등록 학생수";
+
         }
 
         /// <summary>
@@ -104,25 +73,18 @@ namespace CHH_PJT2
         /// </summary>
         private void SetAtt()
         {
-            try
-            {
-                HomeDB db = new HomeDB();
-                DataTable dt = db.GetAbsenceY();
-                DataTable dt2 = db.GetAbsenceN();
-                db.Dispose();
+            HomeDB db = new HomeDB();
+            DataTable dt = db.GetAbsenceY();
+            DataTable dt2 = db.GetAbsenceN();
+            db.Dispose();
 
-                DataView dv = new DataView(dt);
-                DataView dv2 = new DataView(dt2);
-                chart2.Series[0].Points.DataBind(dv, "absence", "count(stuID)", "ToolTip=count(stuID)");
-                chart2.Series[1].Points.DataBind(dv2, "absence", "count(stuID)", "ToolTip=count(stuID)");
-                chart2.Series[0].ChartType = SeriesChartType.Column;
-                chart2.Series[1].ChartType = SeriesChartType.Column;
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
-           
+            DataView dv = new DataView(dt);
+            DataView dv2 = new DataView(dt2);
+            chart2.Series[0].Points.DataBind(dv, "absence", "count(stuID)", "ToolTip=count(stuID)");
+            chart2.Series[1].Points.DataBind(dv2, "absence", "count(stuID)", "ToolTip=count(stuID)");
+            chart2.Series[0].ChartType = SeriesChartType.Column;
+            chart2.Series[1].ChartType = SeriesChartType.Column;
+
         }
 
         /// <summary>
@@ -130,18 +92,11 @@ namespace CHH_PJT2
         /// </summary>
         private void progressBar()
         {
-            try
-            {
-                HomeDB db = new HomeDB();
-                info info = db.SetProgressBarValue();
-                db.Dispose();
-                circularProgressBar1.Value = info.Att;
-                circularProgressBar1.Maximum = info.AllStu;
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
+            HomeDB db = new HomeDB();
+            info info = db.SetProgressBarValue();
+            db.Dispose();
+            circularProgressBar1.Value = info.Att;
+            circularProgressBar1.Maximum = info.AllStu;
         }
     }
 }

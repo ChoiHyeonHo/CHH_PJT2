@@ -65,6 +65,12 @@
       <DependentUpon>frmSearchRoad.cs</DependentUpon>
     </Compile>
     <Compile Include="DB\MembershipDB.cs" />
+    <Compile Include="Form\frmDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmDelete.Designer.cs">
+      <DependentUpon>frmDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Util\참고 CS\AttendanceInfo.cs" />
     <Compile Include="Util\참고 CS\CircularProgressBar.cs">
       <SubType>Component</SubType>
@@ -194,6 +200,9 @@
     <EmbeddedResource Include="Form\frmSearchRoad.resx">
       <DependentUpon>frmSearchRoad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmDelete.resx">
+      <DependentUpon>frmDelete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -259,6 +268,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-refresh-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-brake-warning-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

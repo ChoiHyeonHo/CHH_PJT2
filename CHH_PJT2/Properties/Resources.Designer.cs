@@ -63,6 +63,16 @@ namespace CHH_PJT2.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_brake_warning_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-brake-warning-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_checkmark_144 {
             get {
                 object obj = ResourceManager.GetObject("icons8-checkmark-144", resourceCulture);

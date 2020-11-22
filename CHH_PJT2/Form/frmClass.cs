@@ -50,6 +50,7 @@ namespace CHH_PJT2
                 DataSet ds = db.GetCommonCode(codes);
 
                 CommonUtil.BindingComboBox(comboBox1, ds.Tables["LessonType"], "Code", "Name");
+                CommonUtil.BindingComboBox(cbClass, ds.Tables["LessonType"], "Code", "Name");
                 SetMemberText st = new SetMemberText(comboBox1.Text);
             }
             catch (Exception err)
@@ -189,17 +190,25 @@ namespace CHH_PJT2
         {
             try
             {
-                ClassDB db = new ClassDB();
-                SetClassText st = new SetClassText(txtLessonCode.Text, txtLessonName.Text, cbClass.Text, txtStaffID.Text, dtpStartDate.Value, dtpEndDate.Value, dtpStartTime.Value, dtpEndTime.Value, int.Parse(txtAmount.Text), txtNsReport.Text);
-                bool bFlag = db.DeleteClass(st);
-                if (bFlag)
+                frmDelete frm = new frmDelete();
+                if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("정보 삭제가 완료되었습니다.");
-                    SetData();
+                    ClassDB db = new ClassDB();
+                    SetClassText st = new SetClassText(txtLessonCode.Text, txtLessonName.Text, cbClass.Text, txtStaffID.Text, dtpStartDate.Value, dtpEndDate.Value, dtpStartTime.Value, dtpEndTime.Value, int.Parse(txtAmount.Text), txtNsReport.Text);
+                    bool bFlag = db.DeleteClass(st);
+                    if (bFlag)
+                    {
+                        MessageBox.Show("정보 삭제가 완료되었습니다.");
+                        SetData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("형식을 잘못 입력하였거나 빈 항목이 있습니다.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("형식을 잘못 입력하였거나 빈 항목이 있습니다.");
+                    frm.Close();
                 }
             }
             catch (Exception err)
